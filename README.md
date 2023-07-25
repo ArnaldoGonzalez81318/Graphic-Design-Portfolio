@@ -1,61 +1,70 @@
-# Graphic-Design-Portfolio
- Graphic Designer Portfolio built with React and Next.js.
+# Getting Started with Create React App
 
-## Table of Contents
-- [Graphic-Design-Portfolio](#graphic-design-portfolio)
-  - [Table of Contents](#table-of-contents)
-  - [About ](#about-)
-  - [Demo](#demo)
-  - [Getting Started ](#getting-started-)
-  - [Built With ](#built-with-)
-  - [Learn More ](#learn-more-)
-  - [Deploy on Netlify ](#deploy-on-netlify-)
-  - [Acknowledgements](#acknowledgements)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## About <a name = "about"></a>
-This is a portfolio website built with React and Next.js. It is a single page application that uses React Router to navigate between pages. The website is responsive and works on mobile devices. The website is deployed on Netlify.
+## Available Scripts
 
-## Demo
-[Live Demo](https://graphic-design-portfolio.netlify.app/)
+In the project directory, you can run:
 
-## Getting Started <a name = "getting_started"></a>
-First, clone the repository and install the dependencies.
-```
-git clone
-cd Graphic-Design-Portfolio
-npm install
-```
-Start the development server.
-```
-npm run dev
-# or
-yarn dev
-```
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### `npm start`
 
-## Built With <a name = "built_with"></a>
-- [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
-- [Next.js](https://nextjs.org/) - The React Framework for Production.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Learn More <a name = "learn_more"></a>
-To learn more about Next.js, take a look at the following resources:
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### `npm test`
 
-## Deploy on Netlify <a name = "deploy"></a>
-The website is deployed on Netlify. To deploy your own version, follow these steps:
-1. Fork the repository.
-2. Connect your GitHub account to Netlify.
-3. Select the repository you want to deploy.
-4. Click on "Deploy site".
-5. Your website is now live.
-6. To update your website, push your changes to GitHub and Netlify will automatically redeploy your website.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Acknowledgements
-- [React Icons](https://react-icons.github.io/react-icons/)
-- [React Router](https://reactrouter.com/)
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
