@@ -19,11 +19,38 @@ const seo = {
   }
 };
 
+// Navbar
+const navbar = {
+  logo: 'logo.png',
+  navLinks: [
+    {
+      name: 'Home',
+      url: '/',
+    },
+    {
+      name: 'Education',
+      url: '/education',
+    },
+    {
+      name: 'Experience',
+      url: '/experience',
+    },
+    {
+      name: 'Projects',
+      url: '/projects',
+    },
+    {
+      name: 'Contact',
+      url: '/contact',
+    },
+  ],
+};
+
 // Home Page
 const greeting = {
-  title: 'Hi, I\'m Laura',
+  username: 'Laura',
   profession: 'Graphic Designer',
-  description: "Welcome! I'm Janie Wilson, and I know I can help your company create stunning visuals. As someone who has worked in marketing and graphic design for over a decade, I know what brands need to capture their audiences' attention.With my powerful design skills and knack for marketing, I have the right background for your brand's needs.",
+  description: "Welcome! I'm Laura, and I know I can help your company create stunning visuals. As someone who has worked in marketing and graphic design for over a decade, I know what brands need to capture their audiences' attention.With my powerful design skills and knack for marketing, I have the right background for your brand's needs.",
 };
 
 const socialMedia = [
@@ -76,6 +103,7 @@ const skills = {
 
 export {
   seo,
+  navbar,
   greeting,
   socialMedia,
   skills,
