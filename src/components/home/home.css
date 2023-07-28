@@ -1,3 +1,21 @@
 .home {
   background-color: #010101;
+  overflow: auto;
+}
+
+.home::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.home::-webkit-scrollbar-track {
+  background-color: #010101;
+}
+
+.home::-webkit-scrollbar-thumb {
+  background-color: #64ffda;
+  border-radius: 0.5rem;
+}
+
+.home::-webkit-scrollbar-thumb:hover {
+  background-color: #b6fb44;
 }
