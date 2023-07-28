@@ -1,3 +1,12 @@
+import {
+  TiSocialDribbble,
+  TiSocialFacebookCircular,
+  TiSocialTwitterCircular,
+  TiSocialInstagramCircular,
+  TiSocialLinkedinCircular,
+  TiSocialYoutubeCircular
+} from 'react-icons/ti';
+
 const seo = {
   title: 'Laura | Portfolio',
   description: 'Laura\'s portfolio',
@@ -50,27 +59,44 @@ const navbar = {
 const greeting = {
   username: 'Laura',
   profession: 'Graphic Designer',
-  description: "Welcome! I'm Laura, and I know I can help your company create stunning visuals. As someone who has worked in marketing and graphic design for over a decade, I know what brands need to capture their audiences' attention.With my powerful design skills and knack for marketing, I have the right background for your brand's needs.",
+  description: "Welcome to my Portfolio! I can help your company create stunning visuals. As someone who has worked in marketing and graphic design for over a decade, I know what brands need to capture their audiences' attention.With my powerful design skills and knack for marketing, I have the right background for your brand's needs.",
+  resumeLink: 'https://www.google.com/',
 };
 
-const socialMedia = [
-  {
-    name: 'facebook',
-    url: 'https://www.facebook.com/',
-  },
-  {
-    name: 'twitter',
-    url: 'https://twitter.com/',
-  },
-  {
-    name: 'instagram',
-    url: 'https://www.instagram.com/',
-  },
-  {
-    name: 'linkedin',
-    url: 'https://www.linkedin.com/',
-  }
-];
+const socialMedia = {
+  data: [
+    {
+      name: 'facebook',
+      icon: <TiSocialFacebookCircular />,
+      url: 'https://www.facebook.com/',
+    },
+    {
+      name: 'instagram',
+      icon: <TiSocialInstagramCircular />,
+      url: 'https://www.instagram.com/',
+    },
+    {
+      name: 'linkedin',
+      icon: <TiSocialLinkedinCircular />,
+      url: 'https://www.linkedin.com/',
+    },
+    {
+      name: 'twitter',
+      icon: <TiSocialTwitterCircular />,
+      url: 'https://twitter.com/',
+    },
+    {
+      name: 'dribbble',
+      icon: <TiSocialDribbble />,
+      url: 'https://dribbble.com/',
+    },
+    {
+      name: 'youtube',
+      icon: <TiSocialYoutubeCircular />,
+      url: 'https://www.youtube.com/',
+    },
+  ]
+};
 
 const skills = {
   data: [
