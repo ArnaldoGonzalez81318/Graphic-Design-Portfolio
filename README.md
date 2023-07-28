@@ -18,7 +18,7 @@
     - [Advanced Configuration](#advanced-configuration)
     - [Deployment](#deployment)
     - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
-- [Project Tree](#project-tree)
+  - [Project Tree](#project-tree)
 
 ## Description
 
@@ -95,7 +95,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-# Project Tree
+## Project Tree
 
 ```bash
 .
