@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Graphic Designer Portfolio
+
+## Description
+
+This is a portfolio website for a graphic designer. It was built using ReactJS. The website is responsive and mobile friendly. It is hosted on Netlify.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
