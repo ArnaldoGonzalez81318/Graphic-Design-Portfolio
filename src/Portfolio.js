@@ -7,6 +7,16 @@ import {
   TiSocialYoutubeCircular
 } from 'react-icons/ti';
 
+import {
+  SiAdobephotoshop,
+  SiAdobeillustrator,
+  SiAdobexd,
+  SiAdobeindesign,
+  SiAdobeaftereffects,
+  SiAdobepremierepro
+} from 'react-icons/si';
+
+// SEO
 const seo = {
   title: 'Laura | Portfolio',
   description: 'Laura\'s portfolio',
@@ -101,28 +111,57 @@ const socialMedia = {
 const skills = {
   data: [
     {
+      name: 'Design principles',
+      description: 'A strong understanding of design principles is essential for any Graphic Designer. Throughout their work, they will strategically use different elements to convey intended messages. Graphic Designers need to know how to bring together lines, color, shape, space, texture, typography, scale, dominance and emphasis, and harmony to create visually appealing and well-structured designs.',
+    },
+    {
+      name: 'Ideation',
+      description: 'There are many techniques and skills that Graphic Designers use for the ideation process. Two examples are mood boards and thumbnails. Mood boards are a collection of visuals used to explore new ideas and communicate the tone or direction of a project. Thumbnails are quick, rough sketches that approximate the layout of a design, including key elements like images, headlines, and copy.',
+    },
+    {
+      name: 'Branding',
+      description: 'Graphic Designers often build or maintain branding for their client or employer. When working with a brand, they need an in-depth understanding of what makes that brand unique. Then, they need to bring that brand to life through logos, colors, typography, illustration, photography, graphic elements, and more. Graphic Designers should be able to create work that is consistent across platforms and that speaks to the right audience.'
+    },
+    {
+      name: 'Typography',
+      description: 'Typography is one of the most important elements of graphic design. The right typography can create meaning and invoke feeling, while the wrong typography can be distracting or repel customers. Graphic Designers need to be skilled in everything from selecting the right font for a project to typesetting, kerning, tracking, and leading.',
+    },
+    {
+      name: 'Designing for Print',
+      description: 'While digital design is rapidly growing, designing for print is still a useful skill to know. Graphic Designers should be familiar with bleeds, slug, crop, and fold marks, as well as with ink limits, dot gains, and transparency. They also need a thorough understanding of different file formats and color systems, as well as paper sizes, weights, and stocks.',
+    },
+    {
+      name: 'UX and UI design',
+      description: 'UX and UI skills can help Graphic Designers improve their work and stay competitive in the field. By understanding UX and UI, Graphic Designers can create designs that are both visually appealing and functional. Graphic Designers may sometimes work closely with UX and UI Designers, so understanding the fundamentals will allow them to better collaborate and communicate with team members.',
+    },
+  ]
+};
+
+const technologies = {
+  data: [
+    {
       name: 'Adobe Photoshop',
-      percentage: 90,
+      logo: <SiAdobephotoshop />,
     },
     {
       name: 'Adobe Illustrator',
-      percentage: 80,
+      logo: <SiAdobeillustrator />,
     },
     {
       name: 'Adobe XD',
-      percentage: 70,
+      logo: <SiAdobexd />,
     },
     {
       name: 'Adobe InDesign',
-      percentage: 60,
+      logo: <SiAdobeindesign />,
     },
     {
       name: 'Adobe After Effects',
-      percentage: 50,
+      logo: <SiAdobeaftereffects />,
     },
     {
       name: 'Adobe Premiere Pro',
-      percentage: 40,
+      logo: <SiAdobepremierepro />,
     },
   ]
 };
@@ -133,4 +172,5 @@ export {
   greeting,
   socialMedia,
   skills,
+  technologies,
 };
