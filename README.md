@@ -1,5 +1,24 @@
 # Graphic Designer Portfolio
 
+## Table of Contents
+
+- [Graphic Designer Portfolio](#graphic-designer-portfolio)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Getting Started with Create React App](#getting-started-with-create-react-app)
+  - [Available Scripts](#available-scripts)
+    - [`npm start`](#npm-start)
+    - [`npm test`](#npm-test)
+    - [`npm run build`](#npm-run-build)
+    - [`npm run eject`](#npm-run-eject)
+  - [Learn More](#learn-more)
+    - [Code Splitting](#code-splitting)
+    - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+    - [Making a Progressive Web App](#making-a-progressive-web-app)
+    - [Advanced Configuration](#advanced-configuration)
+    - [Deployment](#deployment)
+    - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
+
 ## Description
 
 This is a portfolio website for a graphic designer. It was built using ReactJS. The website is responsive and mobile friendly. It is hosted on Netlify.
