@@ -9,7 +9,7 @@ const Skills = () => {
     <section className="skills-section" id="skills">
       <div className="skills-header">
         <h2>Skills</h2>
-        <p>Here are some of the technologies I've worked with:</p>
+        <p>Here are some of my skills that I have acquired over the years.</p>
       </div>
       <div className="skills-container">
         {skills.data.map((skill, index) => {
