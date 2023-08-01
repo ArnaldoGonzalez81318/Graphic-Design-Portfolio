@@ -1,4 +1,6 @@
 .home {
   background-color: #010101;
+  max-width: 2560px;
+  margin: 0 auto;
   overflow: auto;
 }
