@@ -7,14 +7,12 @@ import {
   TiSocialYoutubeCircular
 } from 'react-icons/ti';
 
-import {
-  SiAdobephotoshop,
-  SiAdobeillustrator,
-  SiAdobexd,
-  SiAdobeindesign,
-  SiAdobeaftereffects,
-  SiAdobepremierepro
-} from 'react-icons/si';
+import adobePhotoshop from './components/Assets/svgs/adobe-photoshop.svg';
+import adobeIllustrator from './components/Assets/svgs/adobe-illustrator.svg';
+import adobeXd from './components/Assets/svgs/adobe-xd.svg';
+import adobeInDesign from './components/Assets/svgs/adobe-indesign.svg';
+import adobeAfterEffects from './components/Assets/svgs/after-effects.svg';
+import adobePremierePro from './components/Assets/svgs/premiere-pro.svg';
 
 // SEO
 const seo = {
@@ -141,29 +139,103 @@ const technologies = {
   data: [
     {
       name: 'Adobe Photoshop',
-      logo: <SiAdobephotoshop />,
+      className: 'adobe-photoshop',
+      logo: adobePhotoshop,
     },
     {
       name: 'Adobe Illustrator',
-      logo: <SiAdobeillustrator />,
+      className: 'adobe-illustrator',
+      logo: adobeIllustrator,
     },
     {
       name: 'Adobe XD',
-      logo: <SiAdobexd />,
+      className: 'adobe-xd',
+      logo: adobeXd,
     },
     {
       name: 'Adobe InDesign',
-      logo: <SiAdobeindesign />,
+      className: 'adobe-indesign',
+      logo: adobeInDesign,
     },
     {
       name: 'Adobe After Effects',
-      logo: <SiAdobeaftereffects />,
+      className: 'adobe-after-effects',
+      logo: adobeAfterEffects,
     },
     {
       name: 'Adobe Premiere Pro',
-      logo: <SiAdobepremierepro />,
+      className: 'adobe-premiere-pro',
+      logo: adobePremierePro,
     },
   ]
+};
+
+const footer = {
+  logo: 'logo.png',
+  contact: {
+    email: 'johndoe@gmail.com',
+    phone: '+1 (123) 456 7890',
+    address: '1234 Street Name, City, State, Country',
+  },
+  socialMedia: {
+    data: [
+      {
+        name: 'facebook',
+        icon: <TiSocialFacebookCircular />,
+        url: 'https://www.facebook.com/',
+      },
+      {
+        name: 'instagram',
+        icon: <TiSocialInstagramCircular />,
+        url: 'https://www.instagram.com/',
+      },
+      {
+        name: 'linkedin',
+        icon: <TiSocialLinkedinCircular />,
+        url: 'https://www.linkedin.com/',
+      },
+      {
+        name: 'twitter',
+        icon: <TiSocialTwitterCircular />,
+        url: 'https://twitter.com/',
+      },
+      {
+        name: 'dribbble',
+        icon: <TiSocialDribbble />,
+        url: 'https://dribbble.com/',
+      },
+      {
+        name: 'youtube',
+        icon: <TiSocialYoutubeCircular />,
+        url: 'https://www.youtube.com/',
+      },
+    ]
+  },
+  links: {
+    data: [
+      {
+        name: 'Home',
+        url: '/',
+      },
+      {
+        name: 'Education',
+        url: '/education',
+      },
+      {
+        name: 'Experience',
+        url: '/experience',
+      },
+      {
+        name: 'Projects',
+        url: '/projects',
+      },
+      {
+        name: 'Contact',
+        url: '/contact',
+      },
+    ]
+  },
+  copyRight: '© 2020 John Doe. All rights reserved.',
 };
 
 export {
@@ -173,4 +245,5 @@ export {
   socialMedia,
   skills,
   technologies,
+  footer,
 };
