@@ -56,10 +56,12 @@
 .skill-card-content .skill-name {
   font-weight: 700;
   font-size: 32px;
+  text-transform: capitalize;
 }
 
 .skill-card-content .skill-description {
   line-height: 1.5;
+  text-align: left;
 }
 
 .skill-card-content .skill-btn {
