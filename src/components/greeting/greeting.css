@@ -117,3 +117,45 @@
   color: #010101;
   scale: 1.1;
 }
+
+@media screen and (max-width: 768px) {
+  .greeting-section {
+    height: calc(100vh - 60px);
+    /* 60px is the height of the header */
+  }
+
+  .greeting-shape-1 {
+    width: 600px;
+    height: 600px;
+  }
+
+  .greeting-shape-2 {
+    width: 500px;
+    height: 500px;
+  }
+
+  .greeting-container {
+    max-width: 40rem;
+  }
+
+  .greeting-name {
+    font-size: 3rem;
+  }
+
+  .greeting-role {
+    font-size: 1.5rem;
+  }
+
+  .greeting-description {
+    font-size: 1.25rem;
+  }
+
+  .greeting-social-links a svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .greeting-resume a {
+    font-size: 1.25rem;
+  }
+}
