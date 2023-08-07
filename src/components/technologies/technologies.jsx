@@ -8,9 +8,7 @@ const Technologies = () => {
   return (
     <section className="technologies">
       <h2 className="technologies-title">Technologies</h2>
-      <p className="technologies-subtitle">
-        A summary of the technologies I have worked with.
-      </p>
+      <p className="technologies-subtitle">A summary of the technologies I have worked with.</p>
       <div className="technologies-container">
         {technologies.data.map((tech, index) => {
           return (
@@ -18,7 +16,7 @@ const Technologies = () => {
               <div className="technology-logo">
                 <img src={tech.logo} alt={tech.name} />
               </div>
-              <p className="technology-name">{tech.name}</p>
+              <p className={`technology-name technology-${tech.className}`}>{tech.name}</p>
             </div>
           );
         })}
