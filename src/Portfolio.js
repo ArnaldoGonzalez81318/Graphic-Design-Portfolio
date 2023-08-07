@@ -38,7 +38,7 @@ const seo = {
 
 // Navbar
 const navbar = {
-  logo: 'logo.png',
+  logo: 'logo.svg',
   navLinks: [
     {
       name: 'Home',
