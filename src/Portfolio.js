@@ -14,6 +14,8 @@ import adobeInDesign from './components/Assets/svgs/adobe-indesign.svg';
 import adobeAfterEffects from './components/Assets/svgs/after-effects.svg';
 import adobePremierePro from './components/Assets/svgs/premiere-pro.svg';
 
+const year = new Date().getFullYear();
+
 // SEO
 const seo = {
   title: 'Laura | Portfolio',
@@ -235,7 +237,7 @@ const footer = {
       },
     ]
   },
-  copyRight: '© 2020 John Doe. All rights reserved.',
+  copyRight: "© 2020 - " + year + " John Doe. All rights reserved.",
 };
 
 export {
