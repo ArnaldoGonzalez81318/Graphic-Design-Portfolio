@@ -33,7 +33,7 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
     return (
       <main className="section-padding">
         <div className="container-grid">
-          <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-8">
+          <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-8">
             <p className="text-xs uppercase tracking-[0.35em] text-highlight">Loading project</p>
             <p className="mt-4 text-lg text-subtle">Syncing archive content from Firebase.</p>
           </div>
@@ -46,7 +46,7 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
     return (
       <main className="section-padding">
         <div className="container-grid">
-          <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-8">
+          <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-8">
             <p className="text-xs uppercase tracking-[0.35em] text-highlight">Project not found</p>
             <h1 className="mt-4 text-3xl font-display text-white">That archive project is not available.</h1>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -114,7 +114,7 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
                 {project.featured ? (
                   <Link
                     to="/#work"
-                    className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-subtle transition hover:border-white/20 hover:text-white"
+                    className="inline-flex items-center justify-center rounded-full border border-white/5 bg-white/[0.03] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-subtle transition hover:border-white/10 hover:text-white"
                   >
                     Featured case study
                   </Link>
@@ -123,7 +123,7 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
 
               <div className="grid gap-4 sm:grid-cols-3">
                 {project.metrics.map((metric) => (
-                  <div key={metric.label} className="rounded-[1.8rem] border border-white/8 bg-white/[0.03] p-5">
+                  <div key={metric.label} className="rounded-[1.8rem] border border-white/5 bg-white/[0.03] p-5">
                     <p className="text-xs uppercase tracking-[0.3em] text-quiet">{metric.label}</p>
                     <p className="mt-3 text-2xl font-display text-white">{metric.value}</p>
                   </div>
@@ -135,7 +135,7 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.45, ease: 'easeOut', delay: 0.08 }}
-              className="overflow-hidden rounded-[2rem] border border-white/8 bg-white/[0.03] shadow-[0_30px_100px_-55px_rgba(56,189,248,0.45)]"
+              className="overflow-hidden rounded-[2rem] border border-white/5 bg-white/[0.03] shadow-[0_30px_100px_-55px_rgba(56,189,248,0.45)]"
             >
               <ProjectMockup project={project} mode="detail" />
             </motion.div>
@@ -146,7 +146,7 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
       <section className="section-padding bg-ink/70">
         <div className="container-grid grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(18rem,0.9fr)]">
           <div className="space-y-8">
-            <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-6 sm:p-8">
+            <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-6 sm:p-8">
               <SectionHeading
                 eyebrow="Challenge"
                 title={project.title}
@@ -155,14 +155,14 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
               <p className="mt-6 text-base leading-relaxed text-subtle sm:text-lg">{project.approach}</p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-6 sm:p-8">
+            <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-6 sm:p-8">
               <p className="text-xs uppercase tracking-[0.35em] text-highlight">Outcome</p>
               <p className="mt-4 text-lg leading-relaxed text-soft sm:text-xl">{project.outcome}</p>
             </div>
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-6">
+            <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-6">
               <p className="text-xs uppercase tracking-[0.35em] text-highlight">Services</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.services.map((service) => (
@@ -176,7 +176,7 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-6">
+            <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-6">
               <p className="text-xs uppercase tracking-[0.35em] text-highlight">Deliverables</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.deliverables.map((item) => (
@@ -190,7 +190,7 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-6">
+            <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-6">
               <p className="text-xs uppercase tracking-[0.35em] text-highlight">Project tags</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
@@ -219,7 +219,7 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
               {relatedProjects.map((item) => (
                 <article
                   key={item.slug}
-                  className="overflow-hidden rounded-[2rem] border border-white/8 bg-white/[0.03] shadow-[0_30px_100px_-60px_rgba(56,189,248,0.45)]"
+                  className="overflow-hidden rounded-[2rem] border border-white/5 bg-white/[0.03] shadow-[0_30px_100px_-60px_rgba(56,189,248,0.45)]"
                 >
                   <ProjectMockup project={item} />
                   <div className="space-y-4 p-6">
