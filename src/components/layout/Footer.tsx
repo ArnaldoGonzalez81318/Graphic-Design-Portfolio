@@ -1,6 +1,19 @@
+import { Link, useLocation } from 'react-router-dom';
+
 import type { FooterContent } from '../../data/portfolio';
 
 const Footer = ({ footer }: { footer: FooterContent }) => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  const resolveHref = (href: string) => {
+    if (href.startsWith('#') && !isHomePage) {
+      return `/${href}`;
+    }
+
+    return href;
+  };
+
   return (
     <footer id="contact" className="border-t border-white/5 bg-ink/80 pb-10 pt-16">
       <div className="container-grid flex flex-col gap-12 text-center sm:text-left lg:flex-row lg:justify-between">
@@ -31,9 +44,9 @@ const Footer = ({ footer }: { footer: FooterContent }) => {
             <ul className="mt-4 space-y-2 text-sm text-subtle">
               {footer.nav.map((item) => (
                 <li key={item.href}>
-                  <a className="transition-colors hover:text-white" href={item.href}>
+                  <Link className="transition-colors hover:text-white" to={resolveHref(item.href)}>
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
