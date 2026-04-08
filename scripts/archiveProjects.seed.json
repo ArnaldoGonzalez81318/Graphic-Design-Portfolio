@@ -1,0 +1,479 @@
+[
+  {
+    "slug": "nova-wellness-rebrand",
+    "sortOrder": 1,
+    "title": "Nova Wellness Rebrand",
+    "client": "Nova Wellness",
+    "year": "2026",
+    "category": "Brand Systems",
+    "format": "Identity + Packaging",
+    "summary": "Premium repositioning system spanning retail packaging, launch collateral, and calming in-store touchpoints.",
+    "headline": "A premium wellness identity designed to feel clinical, calm, and shelf-ready.",
+    "overview": "Nova was preparing for regional retail expansion and needed a visual system that could feel credible in-store without drifting into generic wellness language. The work covered identity refinement, packaging structure, and launch-ready assets for the marketing team.",
+    "challenge": "The existing brand looked soft but inconsistent. Packaging hierarchy was weak, retail signage lacked authority, and the internal team had no repeatable system for launch collateral across print and digital touchpoints.",
+    "approach": "I rebuilt the visual architecture around restrained typography, cleaner information hierarchy, and a packaging system that could flex across SKUs without losing clarity. The rollout extended into signage, launch messaging, and reusable campaign templates.",
+    "outcome": "The refreshed system improved shelf recognition, gave the internal team a clearer rollout toolkit, and supported stronger campaign recall during the first launch cycle.",
+    "palette": [
+      "#38bdf8",
+      "#8b5cf6",
+      "#0f172a"
+    ],
+    "tags": [
+      "Packaging",
+      "Retail",
+      "Launch"
+    ],
+    "services": [
+      "Identity refinement",
+      "Packaging direction",
+      "Retail rollout design",
+      "Launch collateral"
+    ],
+    "deliverables": [
+      "Logo refresh",
+      "Packaging system",
+      "Retail signage",
+      "Campaign templates"
+    ],
+    "metrics": [
+      {
+        "label": "Timeline",
+        "value": "6 weeks"
+      },
+      {
+        "label": "Retail rollout",
+        "value": "12 stores"
+      },
+      {
+        "label": "Recall lift",
+        "value": "+30%"
+      }
+    ],
+    "mockup": "packaging",
+    "featured": true
+  },
+  {
+    "slug": "orbit-platform-launch",
+    "sortOrder": 2,
+    "title": "Orbit Platform Launch",
+    "client": "Orbit",
+    "year": "2026",
+    "category": "Campaign Design",
+    "format": "Launch System",
+    "summary": "Cross-functional launch design for keynote storytelling, paid acquisition visuals, and sales enablement.",
+    "headline": "A launch system that aligned keynote storytelling, paid media, and sales materials.",
+    "overview": "Orbit needed a launch identity that could move seamlessly from executive presentations to acquisition campaigns. The design system had to feel modern, technical, and highly legible across screens, decks, and sales collateral.",
+    "challenge": "Marketing and sales were operating with disconnected materials. Presentation design, web visuals, and paid media all looked like separate campaigns, which diluted recognition at launch.",
+    "approach": "I built a modular launch language with a clear typographic system, high-contrast gradients, and reusable component logic for slides, ads, landing visuals, and follow-up collateral.",
+    "outcome": "The unified launch system gave the team a more coherent public story and stronger sales support materials, contributing to better recognition across launch touchpoints.",
+    "palette": [
+      "#60a5fa",
+      "#2563eb",
+      "#020617"
+    ],
+    "tags": [
+      "B2B",
+      "Decks",
+      "Paid Social"
+    ],
+    "services": [
+      "Launch identity",
+      "Presentation design",
+      "Campaign art direction",
+      "Sales enablement"
+    ],
+    "deliverables": [
+      "Keynote deck",
+      "Paid social suite",
+      "Landing page visuals",
+      "Sales one-pagers"
+    ],
+    "metrics": [
+      {
+        "label": "Launch window",
+        "value": "10 weeks"
+      },
+      {
+        "label": "Demo lift",
+        "value": "2.4x"
+      },
+      {
+        "label": "Core channels",
+        "value": "4"
+      }
+    ],
+    "mockup": "campaign",
+    "featured": true
+  },
+  {
+    "slug": "muse-festival-experience",
+    "sortOrder": 3,
+    "title": "Muse Festival Experience",
+    "client": "Muse Festival",
+    "year": "2025",
+    "category": "Experiential",
+    "format": "Environmental + Motion",
+    "summary": "Art-direction system for stage graphics, merchandise, and live social moments across a three-day festival.",
+    "headline": "An experiential identity built to live on stage, on merch, and in the social feed.",
+    "overview": "Muse Festival needed a visual world that could carry the event from presale hype to on-site wayfinding and live content. The system had to feel expressive while staying production-aware across physical and digital outputs.",
+    "challenge": "The festival brand needed more than a logo. It needed a flexible language that could scale across stage screens, merchandise, environmental graphics, and social cut-downs without losing energy.",
+    "approach": "I developed a motion-aware visual language with bold color transitions, modular graphic textures, and asset families that could be adapted quickly by production partners and the live content team.",
+    "outcome": "The system created stronger on-site cohesion, more shareable visual moments, and a more recognizable identity across the festival experience.",
+    "palette": [
+      "#f97316",
+      "#fb7185",
+      "#111827"
+    ],
+    "tags": [
+      "Festival",
+      "Motion",
+      "Merch"
+    ],
+    "services": [
+      "Experiential art direction",
+      "Motion system design",
+      "Merchandise design",
+      "Social rollout assets"
+    ],
+    "deliverables": [
+      "Stage visuals",
+      "Festival pass",
+      "Merch graphics",
+      "Live social templates"
+    ],
+    "metrics": [
+      {
+        "label": "Production cycle",
+        "value": "8 weeks"
+      },
+      {
+        "label": "Attendance",
+        "value": "Sold out"
+      },
+      {
+        "label": "Social growth",
+        "value": "+60%"
+      }
+    ],
+    "mockup": "festival",
+    "featured": true
+  },
+  {
+    "slug": "solstice-editorial-issue",
+    "sortOrder": 4,
+    "title": "Solstice Editorial Issue",
+    "client": "Solstice Journal",
+    "year": "2025",
+    "category": "Editorial",
+    "format": "Print Feature",
+    "summary": "A typographic issue system blending long-form editorial pacing with bold openers and refined grid logic.",
+    "headline": "An editorial issue system where typography carried both pacing and personality.",
+    "overview": "Solstice Journal commissioned a feature issue that needed to feel literary without losing visual confidence. The design work focused on pacing, hierarchy, and giving the publication a sharper editorial signature.",
+    "challenge": "The publication had strong writing but an inconsistent visual rhythm. Feature openers lacked authority and interior layouts did not create a clear reading flow for longer pieces.",
+    "approach": "I restructured the issue around a more disciplined grid, expressive title treatments, and quieter interior page systems that let photography and long-form content breathe.",
+    "outcome": "The final issue felt more cohesive, improved readability across long pieces, and gave the editorial team a system they could extend into future releases.",
+    "palette": [
+      "#f8fafc",
+      "#0f172a",
+      "#14b8a6"
+    ],
+    "tags": [
+      "Editorial",
+      "Typography",
+      "Print"
+    ],
+    "services": [
+      "Editorial design",
+      "Typographic art direction",
+      "Grid system development",
+      "Print production support"
+    ],
+    "deliverables": [
+      "Issue opener system",
+      "Feature layouts",
+      "Pull-quote language",
+      "Print-ready files"
+    ],
+    "metrics": [
+      {
+        "label": "Page count",
+        "value": "84 pages"
+      },
+      {
+        "label": "Feature stories",
+        "value": "6"
+      },
+      {
+        "label": "Review rounds",
+        "value": "3"
+      }
+    ],
+    "mockup": "editorial",
+    "featured": false
+  },
+  {
+    "slug": "ember-seasonal-packaging",
+    "sortOrder": 5,
+    "title": "Ember Seasonal Packaging",
+    "client": "Ember Coffee",
+    "year": "2025",
+    "category": "Packaging",
+    "format": "Seasonal Collection",
+    "summary": "Seasonal coffee packaging set with illustrated labels, tasting cards, and shelf-ready merchandising cues.",
+    "headline": "A seasonal packaging collection designed to feel collectible without losing retail clarity.",
+    "overview": "Ember needed a seasonal collection that could signal craft and warmth while still reading clearly across a crowded retail shelf. The project covered label direction, tasting card systems, and small merchandising elements.",
+    "challenge": "Previous seasonal releases looked disconnected from one another and relied too heavily on flavor naming to create distinction. The brand needed a system that could feel collectible but still recognizable at a glance.",
+    "approach": "I paired illustrative motifs with tighter hierarchy and a more consistent packaging architecture so each flavor could feel distinct while remaining part of a single release family.",
+    "outcome": "The collection delivered stronger shelf cohesion and gave the brand a reusable seasonal framework that could support future drops with less redesign overhead.",
+    "palette": [
+      "#f59e0b",
+      "#7c2d12",
+      "#1c1917"
+    ],
+    "tags": [
+      "Illustration",
+      "Packaging",
+      "Shelf Presence"
+    ],
+    "services": [
+      "Packaging design",
+      "Illustration direction",
+      "Collection system design",
+      "Retail merchandising"
+    ],
+    "deliverables": [
+      "Bag graphics",
+      "Tasting cards",
+      "Shelf signage",
+      "Launch social set"
+    ],
+    "metrics": [
+      {
+        "label": "Collection size",
+        "value": "4 SKUs"
+      },
+      {
+        "label": "Launch window",
+        "value": "5 weeks"
+      },
+      {
+        "label": "Merch touchpoints",
+        "value": "3"
+      }
+    ],
+    "mockup": "packaging",
+    "featured": false
+  },
+  {
+    "slug": "district-arts-campaign",
+    "sortOrder": 6,
+    "title": "District Arts Campaign",
+    "client": "City Arts Council",
+    "year": "2024",
+    "category": "Campaign Design",
+    "format": "OOH + Social",
+    "summary": "Public-facing campaign language for posters, paid social, and subway placements promoting a city-wide arts week.",
+    "headline": "A civic campaign language built to move from posters to subway placements to social.",
+    "overview": "The City Arts Council needed a public campaign that could make arts week feel visible, energetic, and accessible across a mix of outdoor and digital placements.",
+    "challenge": "The campaign had to appeal to multiple audiences while remaining legible in transit environments and social formats. Previous years relied on disconnected assets that did not build momentum together.",
+    "approach": "I built a poster-led system with bold framing devices, event color coding, and modular headlines that could adapt cleanly to subway placements, paid social, and neighborhood print distribution.",
+    "outcome": "The work created a more recognizable city-wide presence and gave the organizers a stronger toolkit for sustaining awareness across the full campaign window.",
+    "palette": [
+      "#e879f9",
+      "#312e81",
+      "#09090b"
+    ],
+    "tags": [
+      "OOH",
+      "Social",
+      "Cultural"
+    ],
+    "services": [
+      "Campaign identity",
+      "OOH design",
+      "Social art direction",
+      "Public program collateral"
+    ],
+    "deliverables": [
+      "Poster series",
+      "Subway placements",
+      "Social templates",
+      "Program handout"
+    ],
+    "metrics": [
+      {
+        "label": "City placements",
+        "value": "30+"
+      },
+      {
+        "label": "Campaign formats",
+        "value": "12"
+      },
+      {
+        "label": "Program length",
+        "value": "1 week"
+      }
+    ],
+    "mockup": "campaign",
+    "featured": false
+  },
+  {
+    "slug": "meridian-summit-stage-system",
+    "sortOrder": 7,
+    "title": "Meridian Summit Stage System",
+    "client": "Meridian Summit",
+    "year": "2024",
+    "category": "Experiential",
+    "format": "Event Identity",
+    "summary": "Stage visuals, speaker slides, wayfinding, and sponsor integrations designed as one coherent event language.",
+    "headline": "A summit identity that aligned the main stage, speaker decks, and on-site navigation.",
+    "overview": "Meridian Summit needed an event language that could carry attendees from registration to keynote sessions without feeling fragmented. The work covered stage visuals, speaker presentation templates, and wayfinding design.",
+    "challenge": "Stakeholders needed sponsor visibility, speaker flexibility, and clean attendee navigation, but previous event assets were too disconnected to create a coherent experience.",
+    "approach": "I designed a stage-first identity system with presentation templates, signage standards, and sponsor integration rules that kept the event visually unified while staying practical for production teams.",
+    "outcome": "The result was a more polished attendee experience, cleaner sponsor integration, and presentation assets that felt aligned with the event brand from beginning to end.",
+    "palette": [
+      "#22d3ee",
+      "#1d4ed8",
+      "#172554"
+    ],
+    "tags": [
+      "Event",
+      "Wayfinding",
+      "Presentation"
+    ],
+    "services": [
+      "Event branding",
+      "Presentation systems",
+      "Wayfinding design",
+      "Sponsor integration"
+    ],
+    "deliverables": [
+      "Main stage visuals",
+      "Speaker deck templates",
+      "Wayfinding suite",
+      "Partner signage"
+    ],
+    "metrics": [
+      {
+        "label": "Attendees",
+        "value": "2,200"
+      },
+      {
+        "label": "Screens designed",
+        "value": "7"
+      },
+      {
+        "label": "Session tracks",
+        "value": "3"
+      }
+    ],
+    "mockup": "stage",
+    "featured": false
+  },
+  {
+    "slug": "luma-app-launch",
+    "sortOrder": 8,
+    "title": "Luma App Launch",
+    "client": "Luma",
+    "year": "2024",
+    "category": "Product Marketing",
+    "format": "Launch Creative",
+    "summary": "Launch creative system for app store imagery, lifecycle email art direction, and social teaser assets.",
+    "headline": "Product marketing assets designed to make an app launch feel vivid and coordinated.",
+    "overview": "Luma needed launch creative that could sit comfortably across app store listings, lifecycle email, and teaser campaigns. The design language had to feel fresh while staying clear on smaller screens.",
+    "challenge": "The product was strong, but the team lacked a coherent visual campaign to support launch. Existing product screenshots and email templates looked too functional and did not create anticipation.",
+    "approach": "I combined cleaner device framing, energetic accent graphics, and a reusable launch toolkit that could adapt from teaser social to app store stills and onboarding email sequences.",
+    "outcome": "The new launch assets created a more polished first impression and helped the product marketing team maintain consistency across launch channels.",
+    "palette": [
+      "#34d399",
+      "#0f766e",
+      "#022c22"
+    ],
+    "tags": [
+      "Product Marketing",
+      "Email",
+      "App Store"
+    ],
+    "services": [
+      "Product launch art direction",
+      "App store creative",
+      "Email campaign design",
+      "Social launch assets"
+    ],
+    "deliverables": [
+      "App store gallery",
+      "Email modules",
+      "Social teaser set",
+      "Launch style frames"
+    ],
+    "metrics": [
+      {
+        "label": "Launch channels",
+        "value": "3"
+      },
+      {
+        "label": "Email modules",
+        "value": "8"
+      },
+      {
+        "label": "Creative sprint",
+        "value": "4 weeks"
+      }
+    ],
+    "mockup": "product",
+    "featured": false
+  },
+  {
+    "slug": "casa-norte-menu-system",
+    "sortOrder": 9,
+    "title": "Casa Norte Menu System",
+    "client": "Casa Norte",
+    "year": "2023",
+    "category": "Hospitality",
+    "format": "Menu + Brand Collateral",
+    "summary": "A hospitality refresh balancing tactile menu design, table signage, and social content for a neighborhood restaurant.",
+    "headline": "A tactile hospitality system built around menus, table presence, and social continuity.",
+    "overview": "Casa Norte wanted a brand refresh that felt more considered in the dining room while still translating well online. The work focused on tactile print pieces, supporting collateral, and a more confident hospitality voice.",
+    "challenge": "The restaurant had a strong atmosphere in person, but its printed materials and social assets did not reflect that quality. Menus felt generic and table collateral lacked consistency.",
+    "approach": "I designed a warmer typographic system, rebuilt the menu hierarchy, and extended the language into table cards, reservation collateral, and social design templates.",
+    "outcome": "The refreshed materials gave the restaurant a more cohesive in-room presence and a clearer brand expression across guest touchpoints.",
+    "palette": [
+      "#f43f5e",
+      "#fecdd3",
+      "#1f2937"
+    ],
+    "tags": [
+      "Hospitality",
+      "Print",
+      "Brand Refresh"
+    ],
+    "services": [
+      "Hospitality branding",
+      "Menu design",
+      "Printed collateral",
+      "Social support assets"
+    ],
+    "deliverables": [
+      "Dinner menu",
+      "Table cards",
+      "Reservation insert",
+      "Social template kit"
+    ],
+    "metrics": [
+      {
+        "label": "Menu pages",
+        "value": "12"
+      },
+      {
+        "label": "Print pieces",
+        "value": "5"
+      },
+      {
+        "label": "Refresh phase",
+        "value": "3 weeks"
+      }
+    ],
+    "mockup": "hospitality",
+    "featured": false
+  }
+]
