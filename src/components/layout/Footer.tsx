@@ -14,12 +14,14 @@ const Footer = ({ footer }: { footer: FooterContent }) => {
                 {footer.contact.email}
               </a>
             </p>
-            <p>
-              Phone ·{' '}
-              <a className="text-highlight" href={`tel:${footer.contact.phone}`}>
-                {footer.contact.phone}
-              </a>
-            </p>
+            {footer.contact.phone ? (
+              <p>
+                Phone ·{' '}
+                <a className="text-highlight" href={`tel:${footer.contact.phone}`}>
+                  {footer.contact.phone}
+                </a>
+              </p>
+            ) : null}
             <p>Studio · {footer.contact.studio}</p>
           </div>
         </div>
@@ -36,22 +38,24 @@ const Footer = ({ footer }: { footer: FooterContent }) => {
               ))}
             </ul>
           </div>
-          <div className="sm:mx-0">
-            <h3 className="text-sm uppercase tracking-[0.3em] text-quiet">Social</h3>
-            <div className="mt-4 flex flex-wrap justify-center gap-3 sm:justify-start">
-              {footer.social.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 transition hover:border-highlight/60 hover:bg-highlight/10"
-                >
-                  <item.icon className="h-5 w-5 text-subtle transition group-hover:text-highlight" />
-                </a>
-              ))}
+          {footer.social.length > 0 ? (
+            <div className="sm:mx-0">
+              <h3 className="text-sm uppercase tracking-[0.3em] text-quiet">Social</h3>
+              <div className="mt-4 flex flex-wrap justify-center gap-3 sm:justify-start">
+                {footer.social.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 transition hover:border-highlight/60 hover:bg-highlight/10"
+                  >
+                    <item.icon className="h-5 w-5 text-subtle transition group-hover:text-highlight" />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
       </div>
       <div className="container-grid mt-12 border-t border-white/5 pt-6 text-center text-xs uppercase tracking-[0.3em] text-faint">
