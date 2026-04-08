@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 import {
   featuredWork,
@@ -12,38 +13,90 @@ import {
 } from './data/portfolio';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
-import CollaborationSection from './components/sections/CollaborationSection';
-import ExpertiseSection from './components/sections/ExpertiseSection';
-import FeaturedWorkSection from './components/sections/FeaturedWorkSection';
-import HeroSection from './components/sections/HeroSection';
-import ProcessSection from './components/sections/ProcessSection';
-import ToolkitSection from './components/sections/ToolkitSection';
+import HomePage from './pages/HomePage';
+
+const ArchivePage = lazy(() => import('./pages/ArchivePage'));
+const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
+
+const RouteFallback = () => (
+  <main className="section-padding">
+    <div className="container-grid">
+      <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-8">
+        <p className="text-xs uppercase tracking-[0.35em] text-highlight">Loading</p>
+        <p className="mt-4 text-lg text-subtle">Preparing archive content and project detail views.</p>
+      </div>
+    </div>
+  </main>
+);
 
 const App = () => {
+  const location = useLocation();
+
   useEffect(() => {
-    if (meta?.title) {
-      document.title = meta.title;
+    const pageMeta =
+      location.pathname.startsWith('/archive')
+        ? {
+            title: `Archive · ${meta.title}`,
+            description:
+              'Expanded archive of brand systems, campaign launches, editorial design, and experiential graphics by Laura Rivera.',
+          }
+        : meta;
+
+    if (pageMeta?.title) {
+      document.title = pageMeta.title;
     }
 
-    if (meta?.description) {
+    if (pageMeta?.description) {
       const descriptionTag = document.querySelector('meta[name="description"]');
       if (descriptionTag) {
-        descriptionTag.setAttribute('content', meta.description);
+        descriptionTag.setAttribute('content', pageMeta.description);
       }
     }
-  }, []);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = decodeURIComponent(location.hash.replace('#', ''));
+
+      window.requestAnimationFrame(() => {
+        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      return;
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [location.pathname, location.hash]);
 
   return (
     <div className="min-h-screen bg-night text-soft">
       <Header nav={navigation} hero={hero} />
-      <main className="space-y-0">
-        <HeroSection hero={hero} />
-        <FeaturedWorkSection work={featuredWork} />
-        <ExpertiseSection expertise={expertise} />
-        <ToolkitSection tools={toolkit} />
-        <ProcessSection steps={process} />
-        <CollaborationSection email={footerData.contact.email} />
-      </main>
+      <Suspense fallback={<RouteFallback />}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomePage
+                hero={hero}
+                work={featuredWork}
+                expertise={expertise}
+                toolkit={toolkit}
+                process={process}
+                email={footerData.contact.email}
+              />
+            }
+          />
+          <Route
+            path="/archive"
+            element={<ArchivePage email={footerData.contact.email} />}
+          />
+          <Route
+            path="/archive/:slug"
+            element={<ProjectDetailPage email={footerData.contact.email} />}
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Suspense>
       <Footer footer={footerData} />
     </div>
   );
