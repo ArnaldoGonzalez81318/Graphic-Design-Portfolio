@@ -1,0 +1,46 @@
+{
+  "collection": "archiveProjects",
+  "documentId": "slug",
+  "description": "Portfolio archive items consumed by the archive gallery and project detail routes.",
+  "requiredFields": {
+    "slug": "string",
+    "sortOrder": "number",
+    "title": "string",
+    "client": "string",
+    "year": "string",
+    "category": "string",
+    "format": "string",
+    "summary": "string",
+    "headline": "string",
+    "overview": "string",
+    "challenge": "string",
+    "approach": "string",
+    "outcome": "string",
+    "palette": [
+      "string",
+      "string",
+      "string"
+    ],
+    "tags": [
+      "string"
+    ],
+    "services": [
+      "string"
+    ],
+    "deliverables": [
+      "string"
+    ],
+    "metrics": [
+      {
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "mockup": "string",
+    "featured": "boolean"
+  },
+  "optionalFields": {
+    "updatedAt": "timestamp",
+    "seededAt": "timestamp"
+  }
+}
