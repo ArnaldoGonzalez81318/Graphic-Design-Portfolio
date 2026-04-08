@@ -8,7 +8,7 @@ interface ProjectMockupProps {
 }
 
 const frameClasses =
-  'rounded-[1.6rem] border border-white/12 bg-black/20 shadow-[0_18px_50px_-35px_rgba(15,23,42,0.95)] backdrop-blur-md';
+  'rounded-[1.6rem] bg-black/20 ring-1 ring-inset ring-white/12 shadow-[0_18px_50px_-35px_rgba(15,23,42,0.95)] backdrop-blur-md';
 
 const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps) => {
   const [primary, secondary, base] = project.palette;
@@ -72,7 +72,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
             </div>
             <div className="grid gap-4">
               <div className={cn(frameClasses, 'flex items-center justify-center p-4')}>
-                <div className="flex h-full w-full flex-col justify-between rounded-[1.3rem] border border-white/10 bg-black/20 p-4">
+                <div className="flex h-full w-full flex-col justify-between rounded-[1.3rem] bg-black/20 p-4">
                   <span className="text-[0.65rem] uppercase tracking-[0.35em] text-white/65">Festival pass</span>
                   <div>
                     <div className="h-2 w-20 rounded-full bg-white/75" />
@@ -131,7 +131,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
           <div className="absolute inset-6 grid gap-4 sm:grid-cols-[0.85fr_1.15fr]">
             <div className="grid gap-4">
               <div className={cn(frameClasses, 'p-4')}>
-                <div className="rounded-[1.3rem] border border-white/10 bg-black/20 p-4">
+                <div className="rounded-[1.3rem] bg-black/20 p-4">
                   <div className="h-2 w-24 rounded-full bg-white/70" />
                   <div className="mt-4 grid grid-cols-2 gap-2">
                     {Array.from({ length: 4 }).map((_, index) => (
@@ -141,7 +141,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
                 </div>
               </div>
               <div className={cn(frameClasses, 'p-4')}>
-                <div className="rounded-[1.3rem] border border-white/10 bg-black/20 p-4">
+                <div className="rounded-[1.3rem] bg-black/20 p-4">
                   <div className="h-2 w-16 rounded-full bg-white/65" />
                   <div className="mt-3 space-y-2">
                     <div className="h-10 rounded-2xl bg-white/10" />
@@ -155,7 +155,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
                 className={cn(frameClasses, 'h-full max-h-[19rem] w-[12rem] rounded-[2.3rem] p-3 sm:max-h-[22rem] sm:w-[13rem]')}
                 style={{ transform: isDetail ? 'rotate(0deg)' : 'rotate(6deg)' }}
               >
-                <div className="h-full rounded-[1.8rem] border border-white/10 bg-black/30 p-4">
+                <div className="h-full rounded-[1.8rem] bg-black/30 p-4">
                   <div className="h-5 w-20 rounded-full bg-white/80" />
                   <div className="mt-6 h-28 rounded-[1.5rem]" style={{ background: `linear-gradient(135deg, ${primary}70, ${secondary}40)` }} />
                   <div className="mt-4 space-y-2">
@@ -184,7 +184,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
             </div>
             <div className="grid gap-4">
               <div className={cn(frameClasses, 'p-4')}>
-                <div className="h-full rounded-[1.2rem] border border-white/10 bg-black/20 p-4">
+                <div className="h-full rounded-[1.2rem] bg-black/20 p-4">
                   <div className="h-2 w-20 rounded-full bg-white/70" />
                   <div className="mt-4 h-20 rounded-[1rem] bg-white/10" />
                   <div className="mt-3 space-y-2">
@@ -194,7 +194,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
                 </div>
               </div>
               <div className={cn(frameClasses, 'p-4')}>
-                <div className="grid h-full grid-cols-2 gap-2 rounded-[1.2rem] border border-white/10 bg-black/20 p-3">
+                <div className="grid h-full grid-cols-2 gap-2 rounded-[1.2rem] bg-black/20 p-3">
                   {Array.from({ length: 4 }).map((_, index) => (
                     <div key={index} className="rounded-2xl bg-white/10" />
                   ))}
@@ -235,7 +235,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
           <div className="absolute inset-6 grid gap-4 sm:grid-cols-[1.05fr_0.95fr]">
             <div className={cn(frameClasses, 'relative overflow-hidden p-4')}>
               <div className="absolute inset-0" style={{ background: `linear-gradient(160deg, ${primary}35, transparent 55%)` }} />
-              <div className="relative flex h-full flex-col justify-between rounded-[1.2rem] border border-white/10 bg-black/20 p-4">
+              <div className="relative flex h-full flex-col justify-between rounded-[1.2rem] p-4">
                 <div>
                   <div className="h-2 w-16 rounded-full bg-white/75" />
                   <div className="mt-4 h-16 rounded-[1rem]" style={{ background: `linear-gradient(140deg, ${secondary}55, ${primary}28)` }} />
@@ -248,13 +248,13 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
             </div>
             <div className="grid gap-4">
               <div className={cn(frameClasses, 'p-4')}>
-                <div className="rounded-[1.2rem] border border-white/10 bg-black/20 p-4">
+                <div className="rounded-[1.2rem] p-4">
                   <div className="h-2 w-12 rounded-full bg-white/70" />
                   <div className="mt-3 h-24 rounded-[1rem] bg-white/10" />
                 </div>
               </div>
               <div className={cn(frameClasses, 'p-4')}>
-                <div className="rounded-[1.2rem] border border-white/10 bg-black/20 p-4">
+                <div className="rounded-[1.2rem] p-4">
                   <div className="h-2 w-20 rounded-full bg-white/65" />
                   <div className="mt-4 space-y-2">
                     <div className="h-2 rounded-full bg-white/15" />
@@ -272,7 +272,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
   return (
     <div
       className={cn(
-        'relative isolate overflow-hidden border-b border-white/8',
+        'relative isolate overflow-hidden border-b border-white/[0.04]',
         isDetail ? 'h-[22rem] sm:h-[28rem] lg:h-[34rem]' : 'h-72',
         className,
       )}
@@ -281,10 +281,10 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
       }}
     >
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-      <div className="absolute left-5 top-5 rounded-full border border-white/12 bg-black/20 px-3 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white/75 backdrop-blur-sm sm:left-6 sm:top-6">
+      <div className="absolute left-5 top-5 rounded-full bg-black/35 px-3 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white/75 shadow-[0_12px_28px_-18px_rgba(15,23,42,0.95)] backdrop-blur-sm sm:left-6 sm:top-6">
         {project.client}
       </div>
-      <div className="absolute right-5 top-5 rounded-full border border-white/12 bg-black/20 px-3 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white/75 backdrop-blur-sm sm:right-6 sm:top-6">
+      <div className="absolute right-5 top-5 rounded-full bg-black/35 px-3 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white/75 shadow-[0_12px_28px_-18px_rgba(15,23,42,0.95)] backdrop-blur-sm sm:right-6 sm:top-6">
         {project.year}
       </div>
       {renderMockup()}
