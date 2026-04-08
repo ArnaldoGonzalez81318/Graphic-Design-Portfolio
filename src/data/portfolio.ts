@@ -80,6 +80,10 @@ export interface CaseStudy {
   industry: string;
   summary: string;
   result: string;
+  overview: string;
+  timeline: string;
+  deliverables: string[];
+  impact: string;
 }
 
 export const navigation: NavItem[] = [
@@ -249,6 +253,12 @@ export const featuredWork: CaseStudy[] = [
     summary:
       'Visual identity and launch system for a wellness brand expanding nationally, including packaging, signage, and digital collateral.',
     result: '30% lift in campaign recall and a refreshed retail presence within six weeks.',
+    overview:
+      'Nova needed a sharper premium position before entering new regional retail chains. The system had to feel calm and clinical without flattening the brand into generic wellness tropes.',
+    timeline: '6-week sprint',
+    deliverables: ['Identity refresh', 'Packaging system', 'Retail signage', 'Launch campaign'],
+    impact:
+      'The refreshed identity created a more cohesive shelf presence, gave the internal team a repeatable rollout system, and improved campaign recall during the first six weeks of launch.',
   },
   {
     title: 'Orbit SaaS Launch',
@@ -256,6 +266,12 @@ export const featuredWork: CaseStudy[] = [
     summary:
       'Full go-to-market creative for a collaborative SaaS platform spanning product UI, pitch decks, and integrated marketing materials.',
     result: 'Helped secure Series B funding and increased product trial signups by 2.4x.',
+    overview:
+      'Orbit was preparing for a funding push and needed its product story to feel more mature across investor, marketing, and onboarding touchpoints. The work aligned UI polish with a clearer category narrative.',
+    timeline: '10-week launch window',
+    deliverables: ['Product UI visuals', 'Investor deck', 'Campaign landing pages', 'Sales enablement'],
+    impact:
+      'A unified launch system helped the product team move faster, improved the consistency of external messaging, and gave leadership stronger materials for fundraising conversations.',
   },
   {
     title: 'Muse Festival Experience',
@@ -263,5 +279,11 @@ export const featuredWork: CaseStudy[] = [
     summary:
       'Immersive visual experience with environmental graphics, merchandise, and real-time motion content for a three-day art festival.',
     result: 'Sold-out attendance with 60% growth in social engagement year over year.',
+    overview:
+      'Muse wanted an identity that could live on-site, on merch, and across live social coverage without losing its sense of spontaneity. The system balanced expressive art direction with practical production constraints.',
+    timeline: '8-week production cycle',
+    deliverables: ['Environmental graphics', 'Motion content', 'Merch collection', 'Social launch assets'],
+    impact:
+      'The visual system gave the festival a stronger sense of place, produced highly shareable brand moments on-site, and supported sold-out attendance with stronger year-over-year engagement.',
   },
 ];
