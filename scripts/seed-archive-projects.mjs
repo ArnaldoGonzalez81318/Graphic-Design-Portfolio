@@ -5,6 +5,12 @@ import path from 'node:path';
 import { applicationDefault, cert, getApps, initializeApp } from 'firebase-admin/app';
 import { FieldValue, getFirestore } from 'firebase-admin/firestore';
 
+import {
+  findArchiveSeedConsistencyIssues,
+  formatValidationErrors,
+  validateArchiveSeedData,
+} from './utils/archive-seed-validation.mjs';
+
 const archiveCollectionName = process.env.FIREBASE_ARCHIVE_COLLECTION || 'archiveProjects';
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentDir = path.dirname(currentFilePath);
@@ -126,12 +132,15 @@ function validateProject(project) {
 
 async function seedArchiveProjects() {
   const [projects, schema] = await Promise.all([loadSeedData(), loadSchema()]);
-
-  if (!Array.isArray(projects) || projects.length === 0) {
-    throw new Error('No archive projects found in seed data.');
+  const validationResult = validateArchiveSeedData(schema, projects);
+  if (!validationResult.valid) {
+    throw new Error(`Archive seed data failed schema validation.\n${formatValidationErrors(validationResult.errors)}`);
   }
 
-  projects.forEach(validateProject);
+  const consistencyIssues = findArchiveSeedConsistencyIssues(projects);
+  if (consistencyIssues.length > 0) {
+    throw new Error(`Archive seed data failed consistency checks.\n- ${consistencyIssues.join('\n- ')}`);
+  }
 
   if (dryRun) {
     console.log(`Validated ${projects.length} archive projects for ${archiveCollectionName}.`);
@@ -161,7 +170,12 @@ async function seedArchiveProjects() {
   const schemaDocRef = db.collection(archiveCollectionName).doc('__schema__');
   await schemaDocRef.set(
     {
-      ...schema,
+      collection: schema.collection,
+      documentId: schema.documentId,
+      title: schema.title,
+      description: schema.description,
+      requiredFields: schema.items?.required ?? [],
+      schemaVersion: schema.$schema,
       updatedAt: FieldValue.serverTimestamp(),
     },
     { merge: true },
