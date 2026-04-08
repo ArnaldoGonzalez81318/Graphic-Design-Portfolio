@@ -1,12 +1,4 @@
 import type { IconType } from 'react-icons';
-import {
-  TiSocialDribbble,
-  TiSocialFacebookCircular,
-  TiSocialInstagramCircular,
-  TiSocialLinkedinCircular,
-  TiSocialTwitterCircular,
-  TiSocialYoutubeCircular,
-} from 'react-icons/ti';
 
 import adobeAfterEffects from '../assets/svgs/after-effects.svg';
 import adobeIllustrator from '../assets/svgs/adobe-illustrator.svg';
@@ -62,7 +54,7 @@ export interface FooterContent {
   studioNote: string;
   contact: {
     email: string;
-    phone: string;
+    phone?: string;
     studio: string;
   };
   nav: NavItem[];
@@ -95,7 +87,7 @@ export const navigation: NavItem[] = [
 ];
 
 export const meta = {
-  title: 'Laura Rivera · Graphic Designer',
+  title: 'Laura Rivera · Senior Graphic Designer',
   description:
     'Portfolio of Laura Rivera, a senior graphic designer crafting brand systems, campaign narratives, and immersive visual experiences.',
   keywords: [
@@ -113,22 +105,15 @@ export const hero: HeroContent = {
   title: 'Senior Graphic Designer',
   headline: 'I build brand universes that stay with people long after the campaign ends.',
   description:
-    "Partnering with founders, product teams, and marketers to craft visual narratives that are as strategic as they are expressive. From global launches to intimate rebrands, I translate ideas into memorable experiences.",
+    'Partnering with marketing teams, founders, and cultural organizations to craft visual systems that feel distinctive, polished, and ready for launch. From brand refreshes to campaign rollouts, I translate strategy into memorable design.',
   location: 'Austin, Texas',
-  availability: 'Open for collaborations in Q1 2026',
-  resumeUrl: 'https://www.google.com/',
-  social: [
-    { label: 'Dribbble', href: 'https://dribbble.com/', icon: TiSocialDribbble },
-    { label: 'Instagram', href: 'https://www.instagram.com/', icon: TiSocialInstagramCircular },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/', icon: TiSocialLinkedinCircular },
-    { label: 'Twitter', href: 'https://twitter.com/', icon: TiSocialTwitterCircular },
-    { label: 'Facebook', href: 'https://www.facebook.com/', icon: TiSocialFacebookCircular },
-    { label: 'YouTube', href: 'https://www.youtube.com/', icon: TiSocialYoutubeCircular },
-  ],
+  availability: 'Available for freelance, contract, and select in-house collaborations in 2026',
+  resumeUrl: '#contact',
+  social: [],
   metrics: [
-    { label: 'Years in branding', value: '10+' },
-    { label: 'Campaign launches', value: '45' },
-    { label: 'Design awards', value: '12' },
+    { label: 'Primary focus', value: 'Brand Identity' },
+    { label: 'Core strength', value: 'Campaign Systems' },
+    { label: 'Formats', value: 'Print + Digital' },
   ],
 };
 
@@ -136,8 +121,8 @@ export const expertise: SkillArea[] = [
   {
     title: 'Design Systems',
     summary:
-      'Inclusive, responsive systems that scale from pitch decks to immersive product ecosystems while preserving brand personality.',
-    tags: ['Brand foundations', 'UI kits', 'Accessibility'],
+      'Flexible visual systems that scale across campaign rollouts, presentation decks, web graphics, and print without losing brand personality.',
+    tags: ['Brand guidelines', 'Template systems', 'Accessibility'],
   },
   {
     title: 'Campaign Storytelling',
@@ -158,16 +143,16 @@ export const expertise: SkillArea[] = [
     tags: ['Custom lettering', 'Editorial layouts', 'Type pairing'],
   },
   {
-    title: 'Experience Design',
+    title: 'Editorial & Spatial Design',
     summary:
-      'Cross-functional collaboration with product and UX teams to prototype, test, and iterate experiences with measurable impact.',
-    tags: ['Product UX', 'Design ops', 'Research synthesis'],
+      'Editorial layouts, presentation design, and environmental graphics that translate a brand story across physical and digital touchpoints.',
+    tags: ['Editorial systems', 'Environmental graphics', 'Presentation design'],
   },
   {
-    title: 'Creative Facilitation',
+    title: 'Creative Leadership',
     summary:
-      'Workshops, sprints, and stakeholder alignment sessions that turn complex feedback into clear, actionable next steps.',
-    tags: ['Design sprints', 'Stakeholder alignment', 'Team leadership'],
+      'Clear creative direction, review management, and production coordination that keep stakeholders aligned and the work moving forward.',
+    tags: ['Client presentations', 'Production alignment', 'Team leadership'],
   },
 ];
 
@@ -188,7 +173,7 @@ export const toolkit: Tool[] = [
     name: 'Adobe XD',
     logo: adobeXd,
     accent: '#f472b6',
-    summary: 'Rapid product prototypes with interactive flows for stakeholder walkthroughs.',
+    summary: 'Quick mockups and click-through layouts for campaign pages, presentation flows, and stakeholder reviews.',
   },
   {
     name: 'Adobe InDesign',
@@ -212,10 +197,9 @@ export const toolkit: Tool[] = [
 
 export const footer: FooterContent = {
   studioNote:
-    'Designing brand moments for teams who believe craft and strategy belong in the same conversation.',
+    'Senior graphic design direction for identity systems, launch campaigns, editorial storytelling, and production-ready brand assets.',
   contact: {
     email: 'hello@laurarivera.design',
-    phone: '+1 (123) 456-7890',
     studio: 'Austin · Remote-friendly',
   },
   nav: navigation,
@@ -237,12 +221,12 @@ export const process: ProcessStep[] = [
   {
     title: 'Design Production',
     description:
-      'Building systems, design files, prototypes, and motion references with production-ready detail.',
+      'Building brand systems, print-ready files, campaign layouts, and motion references with production-ready detail.',
   },
   {
     title: 'Launch & Stewardship',
     description:
-      'Partnering through rollout, tooling handoff, and post-launch refinement to keep the work resonant.',
+      'Partnering through rollout, production handoff, vendor coordination, and post-launch refinement to keep the work resonant.',
   },
 ];
 
@@ -261,17 +245,17 @@ export const featuredWork: CaseStudy[] = [
       'The refreshed identity created a more cohesive shelf presence, gave the internal team a repeatable rollout system, and improved campaign recall during the first six weeks of launch.',
   },
   {
-    title: 'Orbit SaaS Launch',
-    industry: 'Technology',
+    title: 'Orbit Platform Launch',
+    industry: 'B2B Technology',
     summary:
-      'Full go-to-market creative for a collaborative SaaS platform spanning product UI, pitch decks, and integrated marketing materials.',
-    result: 'Helped secure Series B funding and increased product trial signups by 2.4x.',
+      'Launch identity and campaign system for a technology platform spanning keynote decks, web visuals, paid social, and sales collateral.',
+    result: 'Strengthened launch recognition across sales and marketing touchpoints and lifted demo requests by 2.4x.',
     overview:
-      'Orbit was preparing for a funding push and needed its product story to feel more mature across investor, marketing, and onboarding touchpoints. The work aligned UI polish with a clearer category narrative.',
+      'Orbit needed a sharper visual language before a national launch. The brief focused on aligning messaging, presentation design, and campaign assets into one coherent system.',
     timeline: '10-week launch window',
-    deliverables: ['Product UI visuals', 'Investor deck', 'Campaign landing pages', 'Sales enablement'],
+    deliverables: ['Launch identity', 'Keynote deck', 'Web campaign graphics', 'Sales collateral'],
     impact:
-      'A unified launch system helped the product team move faster, improved the consistency of external messaging, and gave leadership stronger materials for fundraising conversations.',
+      'A consistent rollout system helped the team present the platform with more polish, improved campaign consistency, and gave sales stronger materials to support outreach.',
   },
   {
     title: 'Muse Festival Experience',
