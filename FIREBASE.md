@@ -18,7 +18,11 @@ This keeps the public portfolio readable while forcing content changes through a
 
 - Seed documents: `scripts/archiveProjects.seed.json`
 - Schema reference: `scripts/archiveProjects.schema.json`
+- Local setup helper: `npm run seed:archive:setup`
+- Full readiness audit: `npm run seed:archive:doctor`
 - Credential preflight: `npm run seed:archive:check`
+- Schema validation: `npm run seed:archive:validate`
+- Full bootstrap: `npm run seed:archive:bootstrap`
 - Seed command: `npm run seed:archive`
 - Validation-only command: `npm run seed:archive:dry-run`
 
@@ -38,12 +42,17 @@ You can use `scripts/service-account.template.json` as the shape reference when 
 ## Recommended Flow
 
 1. Download a Firebase or Google Cloud service-account key with Firestore access.
-2. Save it to `.credentials/graphic-designer-portfol-baf47.service-account.json`.
-3. Run `npm run seed:archive:check`.
-4. Run `npm run seed:archive:dry-run` to validate the seed payload.
-5. Run `npm run seed:archive`.
-6. If you use the Firebase CLI later, deploy rules with `firebase deploy --only firestore:rules`.
+2. Run `npm run seed:archive:setup`.
+3. Save the real key to `.credentials/graphic-designer-portfol-baf47.service-account.json`.
+4. Run `npm run seed:archive:doctor`.
+5. Run `npm run seed:archive:bootstrap`.
+6. If you prefer to run the seed directly after preflight, use `npm run seed:archive`.
+7. If you use the Firebase CLI later, deploy rules with `firebase deploy --only firestore:rules`.
 
 ## Why This Setup
 
 This avoids using browser credentials for administrative writes, which is the correct production model for a public site.
+
+The seed payload is validated against a formal JSON Schema before any write is attempted, so malformed archive data fails fast and predictably.
+
+The validation step also checks for duplicate `slug` and `sortOrder` values, which helps catch operational mistakes before Firestore data is updated.
