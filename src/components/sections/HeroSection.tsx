@@ -8,6 +8,11 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ hero }: HeroSectionProps) => {
+  const isResumeExternal = hero.resumeUrl.startsWith('http') || hero.resumeUrl.startsWith('mailto:');
+  const resumeLinkProps = isResumeExternal
+    ? { target: '_blank', rel: 'noopener noreferrer' }
+    : undefined;
+
   return (
     <section id="home" className="relative overflow-hidden bg-night">
       <div className="absolute inset-0 bg-aurora opacity-70" aria-hidden="true" />
@@ -28,14 +33,8 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
             </p>
           </div>
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
-            <Button
-              as="a"
-              href={hero.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto"
-            >
-              Download CV
+            <Button as="a" href={hero.resumeUrl} className="w-full sm:w-auto" {...resumeLinkProps}>
+              Request CV
             </Button>
             <Button as="a" variant="ghost" href="#work" className="w-full sm:w-auto">
               Explore Work
@@ -51,19 +50,21 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
               <p className="text-base text-white">{hero.availability}</p>
             </div>
           </div>
-          <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
-            {hero.social.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/5 bg-white/5 backdrop-blur-sm transition hover:border-highlight hover:bg-highlight/10 sm:h-12 sm:w-12"
-              >
-                <item.icon className="h-6 w-6 text-subtle transition group-hover:text-highlight" />
-              </a>
-            ))}
-          </div>
+          {hero.social.length > 0 ? (
+            <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
+              {hero.social.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/5 bg-white/5 backdrop-blur-sm transition hover:border-highlight hover:bg-highlight/10 sm:h-12 sm:w-12"
+                >
+                  <item.icon className="h-6 w-6 text-subtle transition group-hover:text-highlight" />
+                </a>
+              ))}
+            </div>
+          ) : null}
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -75,22 +76,26 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
             <div className="rounded-3xl bg-white/5 p-6 text-left shadow-inner">
               <p className="text-sm uppercase tracking-[0.3em] text-subtle">Impact</p>
               <p className="mt-3 text-2xl font-display text-white">
-                Pairing strategic storytelling with tactile detail to create work that travels across channels.
+                Building brand systems, editorial layouts, and campaign assets that stay cohesive from first concept to final production.
               </p>
             </div>
             <div className="grid gap-4 min-[420px]:grid-cols-2 sm:grid-cols-3">
               {hero.metrics.map((metric) => (
                 <div
                   key={metric.label}
-                  className="rounded-3xl border border-white/5 bg-white/5 p-5 text-center shadow-inner"
+                  className="min-w-0 rounded-3xl border border-white/5 bg-white/5 p-5 text-center shadow-inner"
                 >
-                  <p className="text-3xl font-semibold text-highlight">{metric.value}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.3em] text-muted">{metric.label}</p>
+                  <p className="text-lg font-semibold leading-snug text-highlight sm:text-xl">
+                    {metric.value}
+                  </p>
+                  <p className="mt-2 text-[0.68rem] uppercase leading-relaxed tracking-[0.22em] text-muted">
+                    {metric.label}
+                  </p>
                 </div>
               ))}
             </div>
             <div className="rounded-3xl border border-white/5 bg-white/5 p-6 text-sm leading-relaxed text-subtle">
-              Currently mentoring emerging designers through community workshops and remote critiques.
+              Available for senior-level support across brand refreshes, campaign launches, packaging systems, and editorial design.
             </div>
           </div>
         </motion.div>
