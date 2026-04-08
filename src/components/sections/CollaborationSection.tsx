@@ -22,10 +22,10 @@ const CollaborationSection = ({ email }: CollaborationSectionProps) => {
             <div className="max-w-2xl space-y-4 text-center lg:text-left">
               <span className="text-xs uppercase tracking-[0.4em] text-highlight">Next collaboration</span>
               <h2 className="text-3xl font-display text-white sm:text-4xl lg:text-5xl">
-                Have a campaign, product, or identity around the corner?
+                Have a rebrand, campaign, or editorial launch on the horizon?
               </h2>
               <p className="text-base text-subtle">
-                Let’s map out the milestones, stakeholders, and story. I build bespoke project plans that balance creative exploration with business clarity.
+                Let’s map out the scope, stakeholders, and rollout. I build project plans that balance creative range, production detail, and business clarity.
               </p>
             </div>
             <div className="flex flex-col gap-3 text-sm text-subtle sm:flex-row sm:flex-wrap sm:justify-center lg:flex-col lg:items-end lg:justify-start">
