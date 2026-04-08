@@ -12,6 +12,10 @@ interface HeaderProps {
 
 const Header = ({ nav, hero }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const isResumeExternal = hero.resumeUrl.startsWith('http') || hero.resumeUrl.startsWith('mailto:');
+  const resumeLinkProps = isResumeExternal
+    ? { target: '_blank', rel: 'noopener noreferrer' }
+    : undefined;
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
@@ -44,14 +48,8 @@ const Header = ({ nav, hero }: HeaderProps) => {
           ))}
         </nav>
         <div className="hidden md:flex">
-          <Button
-            as="a"
-            variant="secondary"
-            href={hero.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Download CV
+          <Button as="a" variant="secondary" href={hero.resumeUrl} {...resumeLinkProps}>
+            Request CV
           </Button>
         </div>
         <button
@@ -85,11 +83,10 @@ const Header = ({ nav, hero }: HeaderProps) => {
             as="a"
             variant="secondary"
             href={hero.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...resumeLinkProps}
             className="w-full"
           >
-            Download CV
+            Request CV
           </Button>
         </div>
       </div>
