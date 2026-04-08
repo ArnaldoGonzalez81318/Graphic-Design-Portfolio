@@ -47,15 +47,15 @@ const ArchivePage = ({ email }: ArchivePageProps) => {
             {error ? <span className="text-highlight">{error}</span> : null}
           </div>
           <div className="grid gap-4 md:grid-cols-3">
-            <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-6">
+            <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-quiet">Projects in archive</p>
               <p className="mt-3 text-3xl font-display text-white">{work.length}</p>
             </div>
-            <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-6">
+            <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-quiet">Featured case studies</p>
               <p className="mt-3 text-3xl font-display text-white">{featuredCount}</p>
             </div>
-            <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-6">
+            <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-quiet">Primary use</p>
               <p className="mt-3 text-lg leading-relaxed text-subtle">
                 A fast scan of visual range before a deeper conversation or a case-study review.
@@ -116,7 +116,7 @@ const ArchivePage = ({ email }: ArchivePageProps) => {
                   whileInView="reveal"
                   viewport={{ once: true, amount: 0.2 }}
                   variants={cardVariants}
-                  className="group overflow-hidden rounded-[2rem] border border-white/8 bg-white/[0.03] shadow-[0_30px_90px_-55px_rgba(56,189,248,0.45)] transition hover:border-highlight/40"
+                  className="group overflow-hidden rounded-[2rem] border border-white/5 bg-white/[0.03] shadow-[0_30px_90px_-55px_rgba(56,189,248,0.45)] transition hover:border-highlight/30"
                 >
                   <Link to={`/archive/${project.slug}`} aria-label={`Open project ${project.title}`}>
                     <ProjectMockup project={project} />
@@ -149,7 +149,7 @@ const ArchivePage = ({ email }: ArchivePageProps) => {
                       ))}
                     </div>
 
-                    <div className="flex items-center justify-between gap-4 border-t border-white/8 pt-5 text-xs uppercase tracking-[0.28em] text-quiet">
+                    <div className="flex items-center justify-between gap-4 border-t border-white/[0.04] pt-5 text-xs uppercase tracking-[0.28em] text-quiet">
                       <span>{project.client}</span>
                       <Link className="text-highlight transition hover:text-white" to={`/archive/${project.slug}`}>
                         Open project
