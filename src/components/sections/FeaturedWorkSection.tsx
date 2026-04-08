@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import type { CaseStudy } from '../../data/portfolio';
 import { SectionHeading } from '../ui/SectionHeading';
@@ -42,11 +43,20 @@ const FeaturedWorkSection = ({ work }: FeaturedWorkSectionProps) => {
     <>
       <section id="work" className="section-padding bg-ink/70">
         <div className="container-grid space-y-12">
-          <SectionHeading
-            eyebrow="Selected Work"
-            title="Launching ideas with narrative-rich brand systems"
-            description="A selection of collaborations spanning wellness, technology, and cultural experiences. Each project pairs strategic foundations with bold, sensory design moments."
-          />
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <SectionHeading
+              eyebrow="Selected Work"
+              title="Launching ideas with narrative-rich brand systems"
+              description="A selection of collaborations spanning wellness, technology, and cultural experiences. Each project pairs strategic foundations with bold, sensory design moments."
+              className="max-w-3xl"
+            />
+            <Link
+              to="/archive"
+              className="inline-flex items-center justify-center rounded-full border border-highlight/30 bg-highlight/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-highlight transition hover:border-highlight/60 hover:bg-highlight/20 hover:text-white"
+            >
+              Browse Archive
+            </Link>
+          </div>
           <div className="grid gap-5 sm:gap-6">
             {work.map((project, index) => (
               <motion.article
