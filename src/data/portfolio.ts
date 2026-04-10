@@ -228,7 +228,7 @@ export const footer: FooterContent = {
   },
   nav: navigation,
   social: hero.social,
-  copyright: `© 2013–${currentYear} Laura Rivera. Made with intention.`,
+  copyright: `© 2013–${currentYear} Laura Rivera. All rights reserved.`,
 };
 
 export const process: ProcessStep[] = [
