@@ -24,6 +24,20 @@
 
 This is a portfolio website for a graphic designer. It was built using ReactJS. The website is responsive and mobile friendly. It is hosted on Netlify.
 
+## Screenshots
+
+### Homepage
+
+![Homepage](public/homepage-screenshot.png)
+
+### Projects
+
+![Projects](public/projects-screenshot.png)
+
+### Archive
+
+![Archive](public/archive-screenshot.png)
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
