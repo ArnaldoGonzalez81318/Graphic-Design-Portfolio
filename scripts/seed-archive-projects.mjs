@@ -67,69 +67,6 @@ async function loadSchema() {
   return JSON.parse(json);
 }
 
-function validateStringField(project, fieldName) {
-  return typeof project[fieldName] === 'string' && project[fieldName].trim().length > 0;
-}
-
-function validateStringArray(project, fieldName) {
-  return Array.isArray(project[fieldName]) && project[fieldName].every((item) => typeof item === 'string');
-}
-
-function validateMetrics(project) {
-  return (
-    Array.isArray(project.metrics) &&
-    project.metrics.every(
-      (item) => item && typeof item === 'object' && typeof item.label === 'string' && typeof item.value === 'string',
-    )
-  );
-}
-
-function validateProject(project) {
-  const stringFields = [
-    'slug',
-    'title',
-    'client',
-    'year',
-    'category',
-    'format',
-    'summary',
-    'headline',
-    'overview',
-    'challenge',
-    'approach',
-    'outcome',
-    'mockup',
-  ];
-
-  for (const field of stringFields) {
-    if (!validateStringField(project, field)) {
-      throw new Error(`Project ${project.slug ?? '(unknown)'} is missing a valid ${field} field.`);
-    }
-  }
-
-  if (typeof project.sortOrder !== 'number' || !Number.isFinite(project.sortOrder)) {
-    throw new Error(`Project ${project.slug} is missing a valid sortOrder number.`);
-  }
-
-  if (!Array.isArray(project.palette) || project.palette.length !== 3 || !project.palette.every((item) => typeof item === 'string')) {
-    throw new Error(`Project ${project.slug} must include a 3-value palette array.`);
-  }
-
-  for (const field of ['tags', 'services', 'deliverables']) {
-    if (!validateStringArray(project, field)) {
-      throw new Error(`Project ${project.slug} is missing a valid ${field} string array.`);
-    }
-  }
-
-  if (!validateMetrics(project)) {
-    throw new Error(`Project ${project.slug} is missing a valid metrics array.`);
-  }
-
-  if (typeof project.featured !== 'boolean') {
-    throw new Error(`Project ${project.slug} must include featured as a boolean.`);
-  }
-}
-
 async function seedArchiveProjects() {
   const [projects, schema] = await Promise.all([loadSeedData(), loadSchema()]);
   const validationResult = validateArchiveSeedData(schema, projects);
@@ -167,7 +104,7 @@ async function seedArchiveProjects() {
 
   await batch.commit();
 
-  const schemaDocRef = db.collection(archiveCollectionName).doc('__schema__');
+  const schemaDocRef = db.collection(archiveCollectionName).doc('_schema_');
   await schemaDocRef.set(
     {
       collection: schema.collection,
