@@ -26,6 +26,7 @@ module.exports = {
       version: 'detect',
     },
   },
+  ignorePatterns: ['scripts/', '.eslintrc.cjs'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-explicit-any': 'warn',

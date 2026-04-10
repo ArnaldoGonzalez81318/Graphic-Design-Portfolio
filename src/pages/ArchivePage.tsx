@@ -106,8 +106,6 @@ const ArchivePage = ({ email }: ArchivePageProps) => {
 
           <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
             {visibleWork.map((project, index) => {
-              const [primary, secondary, base] = project.palette;
-
               return (
                 <motion.article
                   key={project.slug}
