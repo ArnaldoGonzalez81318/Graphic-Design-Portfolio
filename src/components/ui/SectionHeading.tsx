@@ -27,11 +27,20 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <Badge className="uppercase tracking-[0.2em] text-xs text-muted opacity-80">{eyebrow}</Badge>
+        <Badge className="text-[0.68rem] uppercase tracking-[0.18em] text-muted opacity-80 max-[359px]:tracking-[0.14em] sm:text-xs sm:tracking-[0.2em]">
+          {eyebrow}
+        </Badge>
       ) : null}
-      <h2 className="text-3xl font-display font-semibold text-white sm:text-4xl lg:text-5xl">{title}</h2>
+      <h2 className="text-[1.72rem] font-display font-semibold leading-[1.08] text-white max-[359px]:text-[1.56rem] sm:text-4xl sm:leading-tight lg:text-5xl">
+        {title}
+      </h2>
       {description ? (
-        <p className={cn('max-w-2xl text-base text-muted sm:text-lg', align === 'center' && 'mx-auto')}>
+        <p
+          className={cn(
+            'max-w-2xl text-[0.95rem] leading-relaxed text-muted max-[359px]:text-[0.9rem] sm:text-lg',
+            align === 'center' && 'mx-auto',
+          )}
+        >
           {description}
         </p>
       ) : null}
