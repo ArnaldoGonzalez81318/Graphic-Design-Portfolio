@@ -46,7 +46,7 @@ const ArchivePage = ({ email }: ArchivePageProps) => {
             {isLoading ? <span className="text-highlight">Syncing content...</span> : null}
             {error ? <span className="text-highlight">{error}</span> : null}
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-quiet">Projects in archive</p>
               <p className="mt-3 text-3xl font-display text-white">{work.length}</p>
@@ -65,7 +65,7 @@ const ArchivePage = ({ email }: ArchivePageProps) => {
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               to="/#work"
-              className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_20px_45px_-15px_rgba(139,92,246,0.65)] transition hover:bg-accent/90"
+              className="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] whitespace-nowrap text-white shadow-[0_20px_45px_-15px_rgba(139,92,246,0.65)] transition hover:bg-accent/90 sm:w-auto"
             >
               Review Featured Studies
             </Link>
@@ -92,7 +92,7 @@ const ArchivePage = ({ email }: ArchivePageProps) => {
                   type="button"
                   onClick={() => setActiveFilter(filter)}
                   className={cn(
-                    'rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] transition',
+                    'rounded-full border px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] transition sm:text-xs',
                     activeFilter === filter
                       ? 'border-highlight/70 bg-highlight/15 text-white'
                       : 'border-white/10 bg-white/[0.03] text-subtle hover:border-highlight/40 hover:text-white',
@@ -121,20 +121,24 @@ const ArchivePage = ({ email }: ArchivePageProps) => {
                   </Link>
 
                   <div className="space-y-5 p-6">
-                    <div className="flex items-start justify-between gap-4">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                       <div className="space-y-2">
                         <p className="text-xs uppercase tracking-[0.3em] text-highlight">{project.category}</p>
-                        <h2 className="text-2xl font-display text-white">{project.title}</h2>
+                        <h2 className="text-[1.15rem] font-display leading-tight text-white max-[359px]:text-[1.05rem] sm:text-2xl">
+                          {project.title}
+                        </h2>
                         <p className="text-sm uppercase tracking-[0.28em] text-quiet">{project.format}</p>
                       </div>
                       {project.featured ? (
-                        <span className="rounded-full border border-highlight/25 bg-highlight/10 px-3 py-2 text-[0.65rem] uppercase tracking-[0.28em] text-highlight">
+                        <span className="self-start rounded-full border border-highlight/25 bg-highlight/10 px-3 py-2 text-[0.65rem] uppercase tracking-[0.28em] text-highlight">
                           Featured
                         </span>
                       ) : null}
                     </div>
 
-                    <p className="text-sm leading-relaxed text-muted sm:text-base">{project.summary}</p>
+                    <p className="text-[0.95rem] leading-relaxed text-muted max-[359px]:text-[0.9rem] sm:text-base">
+                      {project.summary}
+                    </p>
 
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
@@ -147,7 +151,7 @@ const ArchivePage = ({ email }: ArchivePageProps) => {
                       ))}
                     </div>
 
-                    <div className="flex items-center justify-between gap-4 border-t border-white/[0.04] pt-5 text-xs uppercase tracking-[0.28em] text-quiet">
+                    <div className="flex flex-col items-start gap-3 border-t border-white/[0.04] pt-5 text-xs uppercase tracking-[0.28em] text-quiet sm:flex-row sm:items-center sm:justify-between">
                       <span>{project.client}</span>
                       <Link className="text-highlight transition hover:text-white" to={`/archive/${project.slug}`}>
                         Open project
