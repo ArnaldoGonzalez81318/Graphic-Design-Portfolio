@@ -18,14 +18,14 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
     switch (project.mockup) {
       case 'packaging':
         return (
-          <div className="absolute inset-x-6 bottom-5 top-16 flex items-end justify-center gap-4 sm:gap-5">
+          <div className="absolute inset-x-4 bottom-4 top-14 flex items-end justify-center gap-3 sm:inset-x-6 sm:bottom-5 sm:top-16 sm:gap-5">
             {[0, 1, 2].map((index) => (
               <div
                 key={index}
                 className={cn(
                   frameClasses,
-                  'relative flex w-24 flex-col justify-between overflow-hidden p-4 sm:w-28',
-                  index === 1 ? 'h-48 sm:h-56' : 'h-40 sm:h-48',
+                  'relative flex w-20 flex-col justify-between overflow-hidden p-4 sm:w-28',
+                  index === 1 ? 'h-40 sm:h-56' : 'h-32 sm:h-48',
                 )}
                 style={{
                   background: `linear-gradient(180deg, ${index === 1 ? primary : secondary}26, rgba(2,6,23,0.9))`,
@@ -46,7 +46,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
         );
       case 'festival':
         return (
-          <div className="absolute inset-6 grid gap-4 sm:grid-cols-[1.6fr_0.8fr]">
+          <div className="absolute inset-4 grid grid-cols-[1.35fr_0.85fr] gap-3 sm:inset-6 sm:gap-4 sm:grid-cols-[1.6fr_0.8fr]">
             <div className={cn(frameClasses, 'relative overflow-hidden p-5')}>
               <div className="absolute inset-0 opacity-70" style={{ background: `linear-gradient(135deg, ${primary}35, ${secondary}15)` }} />
               <div className="relative flex h-full flex-col justify-between">
@@ -88,7 +88,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
         );
       case 'editorial':
         return (
-          <div className="absolute inset-x-6 bottom-6 top-20 flex items-center justify-center gap-4">
+          <div className="absolute inset-x-4 bottom-4 top-16 flex items-center justify-center gap-3 sm:inset-x-6 sm:bottom-6 sm:top-20 sm:gap-4">
             <div className={cn(frameClasses, 'h-[78%] w-[36%] rotate-[-6deg] p-4')}>
               <div className="h-full rounded-[1.2rem] bg-white/95 p-4 text-slate-900">
                 <div className="h-2 w-16 rounded-full bg-slate-900/90" />
@@ -128,7 +128,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
         );
       case 'product':
         return (
-          <div className="absolute inset-6 grid gap-4 sm:grid-cols-[0.85fr_1.15fr]">
+          <div className="absolute inset-4 grid grid-cols-[0.82fr_1.18fr] gap-3 sm:inset-6 sm:gap-4 sm:grid-cols-[0.85fr_1.15fr]">
             <div className="grid gap-4">
               <div className={cn(frameClasses, 'p-4')}>
                 <div className="rounded-[1.3rem] bg-black/20 p-4">
@@ -152,7 +152,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
             </div>
             <div className="flex items-center justify-center">
               <div
-                className={cn(frameClasses, 'h-full max-h-[19rem] w-[12rem] rounded-[2.3rem] p-3 sm:max-h-[22rem] sm:w-[13rem]')}
+                className={cn(frameClasses, 'h-full max-h-[16rem] w-[10rem] rounded-[2.1rem] p-3 sm:max-h-[22rem] sm:w-[13rem] sm:rounded-[2.3rem]')}
                 style={{ transform: isDetail ? 'rotate(0deg)' : 'rotate(6deg)' }}
               >
                 <div className="h-full rounded-[1.8rem] bg-black/30 p-4">
@@ -169,7 +169,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
         );
       case 'stage':
         return (
-          <div className="absolute inset-6 grid gap-4 sm:grid-cols-[1.4fr_0.9fr]">
+          <div className="absolute inset-4 grid grid-cols-[1.25fr_0.8fr] gap-3 sm:inset-6 sm:gap-4 sm:grid-cols-[1.4fr_0.9fr]">
             <div className={cn(frameClasses, 'relative overflow-hidden p-5')}>
               <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${primary}28, transparent 62%)` }} />
               <div className="relative flex h-full flex-col justify-between">
@@ -205,7 +205,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
         );
       case 'hospitality':
         return (
-          <div className="absolute inset-6 flex items-center justify-center gap-4">
+          <div className="absolute inset-4 flex items-center justify-center gap-2 sm:inset-6 sm:gap-4">
             <div className={cn(frameClasses, 'h-[78%] w-[36%] rotate-[-6deg] p-4')}>
               <div className="h-full rounded-[1.2rem] bg-[#fff9f7] p-4 text-slate-900">
                 <div className="h-3 w-24 rounded-full bg-slate-900/85" />
@@ -232,7 +232,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
       case 'campaign':
       default:
         return (
-          <div className="absolute inset-6 grid gap-4 sm:grid-cols-[1.05fr_0.95fr]">
+          <div className="absolute inset-4 grid grid-cols-[1.05fr_0.95fr] gap-3 sm:inset-6 sm:gap-4 sm:grid-cols-[1.05fr_0.95fr]">
             <div className={cn(frameClasses, 'relative overflow-hidden p-4')}>
               <div className="absolute inset-0" style={{ background: `linear-gradient(160deg, ${primary}35, transparent 55%)` }} />
               <div className="relative flex h-full flex-col justify-between rounded-[1.2rem] p-4">
@@ -273,7 +273,7 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
     <div
       className={cn(
         'relative isolate overflow-hidden border-b border-white/[0.04]',
-        isDetail ? 'h-[22rem] sm:h-[28rem] lg:h-[34rem]' : 'h-72',
+        isDetail ? 'h-[16.5rem] max-[359px]:h-[15rem] sm:h-[23rem] lg:h-[30rem] xl:h-[34rem]' : 'h-64 max-[359px]:h-60 sm:h-72',
         className,
       )}
       style={{
@@ -281,13 +281,22 @@ const ProjectMockup = ({ project, mode = 'card', className }: ProjectMockupProps
       }}
     >
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-      <div className="absolute left-5 top-5 rounded-full bg-black/35 px-3 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white/75 shadow-[0_12px_28px_-18px_rgba(15,23,42,0.95)] backdrop-blur-sm sm:left-6 sm:top-6">
-        {project.client}
+      <div className="absolute inset-x-3 top-3 z-10 flex items-start justify-between gap-1.5 text-[0.54rem] uppercase tracking-[0.18em] text-white/75 max-[359px]:tracking-[0.14em] sm:inset-x-6 sm:top-6 sm:gap-3 sm:text-[0.65rem] sm:tracking-[0.3em]">
+        <div className="max-w-[calc(50%-0.2rem)] truncate rounded-full bg-black/35 px-2.5 py-1.5 shadow-[0_12px_28px_-18px_rgba(15,23,42,0.95)] backdrop-blur-sm sm:max-w-none sm:px-3 sm:py-2">
+          {project.client}
+        </div>
+        <div className="rounded-full bg-black/35 px-2.5 py-1.5 shadow-[0_12px_28px_-18px_rgba(15,23,42,0.95)] backdrop-blur-sm sm:px-3 sm:py-2">
+          {project.year}
+        </div>
       </div>
-      <div className="absolute right-5 top-5 rounded-full bg-black/35 px-3 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white/75 shadow-[0_12px_28px_-18px_rgba(15,23,42,0.95)] backdrop-blur-sm sm:right-6 sm:top-6">
-        {project.year}
+      <div
+        className={cn(
+          'absolute inset-0 origin-center max-[359px]:scale-[0.74] min-[360px]:scale-[0.82] min-[420px]:scale-[0.92] sm:scale-100',
+          isDetail && 'max-[359px]:scale-[0.78] min-[360px]:scale-[0.86] min-[420px]:scale-[0.96] sm:scale-100 lg:scale-[0.94] xl:scale-100',
+        )}
+      >
+        {renderMockup()}
       </div>
-      {renderMockup()}
     </div>
   );
 };
