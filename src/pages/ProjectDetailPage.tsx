@@ -33,7 +33,7 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
     return (
       <main className="section-padding">
         <div className="container-grid">
-          <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-8">
+          <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-6 sm:p-8">
             <p className="text-xs uppercase tracking-[0.35em] text-highlight">Loading project</p>
             <p className="mt-4 text-lg text-subtle">Syncing archive content from Firebase.</p>
           </div>
@@ -46,13 +46,13 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
     return (
       <main className="section-padding">
         <div className="container-grid">
-          <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-8">
+          <div className="rounded-[2rem] border border-white/5 bg-white/[0.03] p-6 sm:p-8">
             <p className="text-xs uppercase tracking-[0.35em] text-highlight">Project not found</p>
-            <h1 className="mt-4 text-3xl font-display text-white">That archive project is not available.</h1>
+            <h1 className="mt-4 text-2xl font-display text-white sm:text-3xl">That archive project is not available.</h1>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/archive"
-                className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent/90"
+                className="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] whitespace-nowrap text-white transition hover:bg-accent/90 sm:w-auto"
               >
                 Back to archive
               </Link>
@@ -80,13 +80,13 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
               Archive
             </Link>
             <span>/</span>
-            <span className="text-highlight">{project.title}</span>
+            <span className="break-words text-highlight">{project.title}</span>
             <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-2 text-[0.65rem] text-white/75">
               {contentSource === 'firebase' ? 'Firebase managed' : 'Local fallback'}
             </span>
           </div>
 
-          <div className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(24rem,34rem)] xl:items-start">
+          <div className="grid gap-8 sm:gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(24rem,34rem)] xl:items-start">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -95,10 +95,12 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
             >
               <div className="space-y-4">
                 <p className="text-xs uppercase tracking-[0.35em] text-highlight">{project.category}</p>
-                <h1 className="max-w-4xl text-4xl font-display text-white sm:text-5xl lg:text-6xl">
+                <h1 className="max-w-4xl text-[2.2rem] font-display leading-[1.08] text-white max-[359px]:text-[1.95rem] sm:text-5xl lg:text-[3.35rem] xl:text-6xl">
                   {project.headline}
                 </h1>
-                <p className="max-w-3xl text-base leading-relaxed text-muted sm:text-lg">{project.overview}</p>
+                <p className="max-w-3xl text-[0.98rem] leading-relaxed text-muted max-[359px]:text-[0.92rem] sm:text-lg">
+                  {project.overview}
+                </p>
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -107,21 +109,21 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
                 </Button>
                 <Link
                   to="/archive"
-                  className="inline-flex items-center justify-center rounded-full border border-highlight/30 bg-highlight/10 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-highlight transition hover:border-highlight/60 hover:bg-highlight/20 hover:text-white"
+                  className="inline-flex w-full items-center justify-center rounded-full border border-highlight/30 bg-highlight/10 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] whitespace-nowrap text-highlight transition hover:border-highlight/60 hover:bg-highlight/20 hover:text-white sm:w-auto"
                 >
                   Back to archive
                 </Link>
                 {project.featured ? (
                   <Link
                     to="/#work"
-                    className="inline-flex items-center justify-center rounded-full border border-white/5 bg-white/[0.03] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-subtle transition hover:border-white/10 hover:text-white"
+                    className="inline-flex w-full items-center justify-center rounded-full border border-white/5 bg-white/[0.03] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] whitespace-nowrap text-subtle transition hover:border-white/10 hover:text-white sm:w-auto"
                   >
                     Featured case study
                   </Link>
                 ) : null}
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-3">
+              <div className="grid gap-4 sm:grid-cols-2 min-[1180px]:grid-cols-3">
                 {project.metrics.map((metric) => (
                   <div key={metric.label} className="rounded-[1.8rem] border border-white/5 bg-white/[0.03] p-5">
                     <p className="text-xs uppercase tracking-[0.3em] text-quiet">{metric.label}</p>
@@ -215,7 +217,7 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
               title="More work in this area"
               description="A few adjacent projects from the archive if you want to keep browsing the same kind of brief."
             />
-            <div className="grid gap-6 lg:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {relatedProjects.map((item) => (
                 <article
                   key={item.slug}
@@ -225,10 +227,10 @@ const ProjectDetailPage = ({ email }: ProjectDetailPageProps) => {
                   <div className="space-y-4 p-6">
                     <div>
                       <p className="text-xs uppercase tracking-[0.3em] text-highlight">{item.category}</p>
-                      <h2 className="mt-3 text-2xl font-display text-white">{item.title}</h2>
+                      <h2 className="mt-3 text-xl font-display text-white sm:text-2xl">{item.title}</h2>
                     </div>
-                    <p className="text-sm leading-relaxed text-muted">{item.summary}</p>
-                    <Link className="text-xs uppercase tracking-[0.28em] text-highlight transition hover:text-white" to={`/archive/${item.slug}`}>
+                    <p className="text-[0.95rem] leading-relaxed text-muted max-[359px]:text-[0.9rem]">{item.summary}</p>
+                    <Link className="inline-flex text-xs uppercase tracking-[0.28em] text-highlight transition hover:text-white" to={`/archive/${item.slug}`}>
                       Open project
                     </Link>
                   </div>
