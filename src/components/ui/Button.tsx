@@ -36,7 +36,7 @@ export type ButtonProps = ButtonAsButton | ButtonAsAnchor;
 const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   ({ className, variant = 'primary', as = 'button', ...props }, ref) => {
     const commonClasses = cn(
-      'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+      'inline-flex min-w-0 items-center justify-center gap-2 rounded-full px-5 py-3 text-center text-[0.72rem] font-semibold uppercase leading-tight tracking-[0.2em] whitespace-nowrap transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:px-6 sm:text-sm',
       variantStyles[variant],
       className,
     );
