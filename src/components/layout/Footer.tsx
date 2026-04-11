@@ -15,15 +15,15 @@ const Footer = ({ footer }: { footer: FooterContent }) => {
   };
 
   return (
-    <footer id="contact" className="border-t border-white/5 bg-ink/80 pb-10 pt-16">
+    <footer id="contact" className="border-t border-white/5 bg-ink/80 pb-8 pt-12 sm:pb-10 sm:pt-16">
       <div className="container-grid flex flex-col gap-12 text-center sm:text-left lg:flex-row lg:justify-between">
         <div className="mx-auto max-w-md space-y-4 sm:mx-0">
           <span className="text-xs uppercase tracking-[0.3em] text-highlight">Let’s collaborate</span>
-          <p className="text-2xl font-display text-white lg:text-3xl">{footer.studioNote}</p>
-          <div className="space-y-1 text-sm text-muted">
+          <p className="text-xl font-display text-white sm:text-2xl lg:text-3xl">{footer.studioNote}</p>
+          <div className="space-y-1 break-words text-sm text-muted">
             <p>
               Email ·{' '}
-              <a className="text-highlight" href={`mailto:${footer.contact.email}`}>
+              <a className="break-all text-highlight sm:break-normal" href={`mailto:${footer.contact.email}`}>
                 {footer.contact.email}
               </a>
             </p>
@@ -71,7 +71,7 @@ const Footer = ({ footer }: { footer: FooterContent }) => {
           ) : null}
         </div>
       </div>
-      <div className="container-grid mt-12 border-t border-white/5 pt-6 text-center text-xs uppercase tracking-[0.3em] text-faint">
+      <div className="container-grid mt-12 border-t border-white/5 pt-6 text-center text-xs uppercase tracking-[0.22em] text-faint sm:tracking-[0.3em]">
         {footer.copyright}
       </div>
     </footer>
