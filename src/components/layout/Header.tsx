@@ -48,17 +48,19 @@ const Header = ({ nav, hero }: HeaderProps) => {
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/5 bg-night/70 backdrop-blur-xl">
-      <div className="container-grid flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/20 text-xl font-semibold text-accent">
+      <div className="container-grid flex h-16 items-center justify-between gap-3 sm:h-20">
+        <Link to="/" className="flex min-w-0 items-center gap-3 break-normal lg:shrink-0">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent/20 text-lg font-semibold text-accent sm:h-10 sm:w-10 sm:text-xl">
             LR
           </span>
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm uppercase tracking-[0.4em] text-quiet">Portfolio</span>
-            <span className="text-base font-semibold text-white">{hero.name}</span>
+          <div className="min-w-0 flex flex-col leading-tight">
+            <span className="hidden whitespace-nowrap text-[0.65rem] uppercase tracking-[0.24em] text-quiet min-[420px]:block sm:text-[0.72rem] sm:tracking-[0.28em] lg:text-sm lg:tracking-[0.4em]">
+              Portfolio
+            </span>
+            <span className="truncate text-sm font-semibold text-white sm:text-base">{hero.name}</span>
           </div>
         </Link>
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-6 lg:flex xl:gap-10">
           {nav.map((item) => (
             <Link
               key={item.href}
@@ -73,7 +75,7 @@ const Header = ({ nav, hero }: HeaderProps) => {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:flex">
+        <div className="hidden xl:flex">
           <Button as="a" variant="secondary" href={hero.resumeUrl} {...resumeLinkProps}>
             Request CV
           </Button>
@@ -81,7 +83,7 @@ const Header = ({ nav, hero }: HeaderProps) => {
         <button
           type="button"
           onClick={toggleMenu}
-          className="inline-flex items-center justify-center rounded-lg p-2 text-subtle transition hover:bg-white/10 md:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-subtle transition hover:bg-white/10 lg:hidden"
           aria-expanded={isOpen}
           aria-label="Toggle navigation"
         >
@@ -90,17 +92,17 @@ const Header = ({ nav, hero }: HeaderProps) => {
       </div>
       <div
         className={cn(
-          'md:hidden',
+          'overflow-hidden transition-[max-height,opacity] duration-300 lg:hidden',
           isOpen ? 'max-h-screen opacity-100' : 'pointer-events-none max-h-0 opacity-0',
         )}
       >
-        <div className="container-grid flex flex-col gap-4 pb-6">
+        <div className="container-grid flex flex-col gap-4 pb-5 sm:pb-6">
           {nav.map((item) => (
             <Link
               key={item.href}
               to={resolveHref(item.href)}
               onClick={handleNavClick}
-              className="rounded-xl border border-white/5 bg-white/5 px-4 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-soft"
+              className="rounded-xl border border-white/5 bg-white/5 px-4 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-soft sm:text-sm"
             >
               {item.label}
             </Link>
