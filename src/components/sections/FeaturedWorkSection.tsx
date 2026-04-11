@@ -52,7 +52,7 @@ const FeaturedWorkSection = ({ work }: FeaturedWorkSectionProps) => {
             />
             <Link
               to="/archive"
-              className="inline-flex items-center justify-center rounded-full border border-highlight/30 bg-highlight/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-highlight transition hover:border-highlight/60 hover:bg-highlight/20 hover:text-white"
+              className="inline-flex w-full items-center justify-center rounded-full border border-highlight/30 bg-highlight/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.28em] whitespace-nowrap text-highlight transition hover:border-highlight/60 hover:bg-highlight/20 hover:text-white sm:w-auto"
             >
               Browse Archive
             </Link>
@@ -61,7 +61,7 @@ const FeaturedWorkSection = ({ work }: FeaturedWorkSectionProps) => {
             {work.map((project, index) => (
               <motion.article
                 key={project.title}
-                className="group relative overflow-hidden rounded-3xl border border-white/5 bg-white/[0.04] p-6 transition hover:border-highlight/60 hover:bg-highlight/10 sm:p-8"
+                className="group relative overflow-hidden rounded-3xl border border-white/5 bg-white/[0.04] p-5 transition hover:border-highlight/60 hover:bg-highlight/10 sm:p-8"
                 custom={index}
                 initial="hidden"
                 whileInView="reveal"
@@ -74,11 +74,11 @@ const FeaturedWorkSection = ({ work }: FeaturedWorkSectionProps) => {
                     <h3 className="text-2xl font-display text-white">{project.title}</h3>
                     <p className="max-w-3xl text-sm text-muted sm:text-base">{project.summary}</p>
                   </div>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-subtle">
+                  <span className="self-start whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-subtle sm:shrink-0">
                     Case Study
                   </span>
                 </div>
-                <div className="mt-6 flex items-center justify-between gap-4 border-t border-white/5 pt-6 text-sm text-subtle">
+                <div className="mt-6 flex flex-col gap-4 border-t border-white/5 pt-6 text-sm text-subtle sm:flex-row sm:items-center sm:justify-between">
                   <p className="max-w-3xl text-muted">{project.result}</p>
                   <button
                     type="button"
@@ -99,7 +99,7 @@ const FeaturedWorkSection = ({ work }: FeaturedWorkSectionProps) => {
       <AnimatePresence>
         {activeProject ? (
           <motion.div
-            className="fixed inset-0 z-50 flex items-end bg-night/80 px-4 py-6 backdrop-blur-md sm:items-center sm:px-6"
+            className="fixed inset-0 z-50 overflow-y-auto bg-night/80 px-4 py-4 backdrop-blur-md sm:px-6 sm:py-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -109,14 +109,14 @@ const FeaturedWorkSection = ({ work }: FeaturedWorkSectionProps) => {
               role="dialog"
               aria-modal="true"
               aria-labelledby="case-study-title"
-              className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b1019] shadow-[0_30px_100px_-40px_rgba(56,189,248,0.45)]"
+              className="mx-auto flex w-full max-w-4xl flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0b1019] shadow-[0_30px_100px_-40px_rgba(56,189,248,0.45)] max-h-[calc(100dvh-2rem)] sm:rounded-[2rem] sm:max-h-[calc(100dvh-4rem)]"
               initial={{ opacity: 0, y: 32, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 24, scale: 0.98 }}
               transition={{ duration: 0.24, ease: 'easeOut' }}
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="flex items-start justify-between gap-6 border-b border-white/10 px-6 py-5 sm:px-8 sm:py-6">
+              <div className="flex flex-col gap-4 border-b border-white/10 px-5 py-5 sm:flex-row sm:items-start sm:justify-between sm:px-8 sm:py-6">
                 <div className="space-y-3">
                   <span className="text-xs uppercase tracking-[0.35em] text-highlight">
                     {activeProject.industry}
@@ -133,14 +133,14 @@ const FeaturedWorkSection = ({ work }: FeaturedWorkSectionProps) => {
                 <button
                   type="button"
                   onClick={() => setActiveProject(null)}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg text-subtle transition hover:border-highlight/60 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-highlight"
+                  className="inline-flex h-11 w-11 shrink-0 self-end items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg text-subtle transition hover:border-highlight/60 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-highlight sm:self-start"
                   aria-label="Close case study deck"
                 >
                   ×
                 </button>
               </div>
 
-              <div className="grid gap-8 px-6 py-6 sm:px-8 sm:py-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(18rem,0.8fr)]">
+              <div className="grid gap-6 overflow-y-auto px-5 py-5 sm:px-8 sm:py-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(18rem,0.8fr)] lg:gap-8">
                 <div className="space-y-6">
                   <div className="rounded-3xl border border-white/8 bg-white/[0.03] p-5 sm:p-6">
                     <p className="text-xs uppercase tracking-[0.3em] text-quiet">Project Overview</p>
