@@ -36,10 +36,10 @@ const App = () => {
     const pageMeta =
       location.pathname.startsWith('/archive')
         ? {
-            title: `Archive · ${meta.title}`,
-            description:
-              'Expanded archive of brand systems, campaign launches, editorial design, and experiential graphics by Laura Rivera.',
-          }
+          title: `Archive · ${meta.title}`,
+          description:
+            'Expanded archive of brand systems, campaign launches, editorial design, and experiential graphics by Laura Rivera.',
+        }
         : meta;
 
     if (pageMeta?.title) {
@@ -69,7 +69,7 @@ const App = () => {
   }, [location.pathname, location.hash]);
 
   return (
-    <div className="min-h-screen bg-night text-soft">
+    <div className="min-h-screen bg-night pt-16 text-soft sm:pt-20">
       <Header nav={navigation} hero={hero} />
       <Suspense fallback={<RouteFallback />}>
         <Routes>
