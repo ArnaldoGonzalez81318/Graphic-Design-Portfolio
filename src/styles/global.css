@@ -4,7 +4,14 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
   overflow-x: hidden;
+}
+
+@media (min-width: 640px) {
+  html {
+    scroll-padding-top: 6rem;
+  }
 }
 
 body {
