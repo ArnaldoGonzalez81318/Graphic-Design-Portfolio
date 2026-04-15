@@ -47,7 +47,7 @@ const Header = ({ nav, hero }: HeaderProps) => {
   }, [location.pathname, location.hash]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/5 bg-night/70 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-night/70 backdrop-blur-xl">
       <div className="container-grid flex h-16 items-center justify-between gap-3 sm:h-20">
         <Link to="/" className="flex min-w-0 items-center gap-3 break-normal lg:shrink-0">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent/20 text-lg font-semibold text-accent sm:h-10 sm:w-10 sm:text-xl">
