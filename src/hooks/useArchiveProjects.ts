@@ -5,7 +5,7 @@ import { isFirebaseConfigured } from '../lib/firebase';
 
 type ArchiveSource = 'local' | 'firebase';
 
-export function useArchiveProjects() {
+export function useArchiveProjects(refreshKey = 0) {
   const [projects, setProjects] = useState<ArchiveProject[]>(archiveWork);
   const [loading, setLoading] = useState(isFirebaseConfigured);
   const [source, setSource] = useState<ArchiveSource>('local');
@@ -14,12 +14,18 @@ export function useArchiveProjects() {
   useEffect(() => {
     let isCancelled = false;
 
+    setError(null);
+
     if (!isFirebaseConfigured) {
+      setProjects(archiveWork);
+      setSource('local');
       setLoading(false);
       return () => {
         isCancelled = true;
       };
     }
+
+    setLoading(true);
 
     const loadProjects = async () => {
       try {
@@ -52,7 +58,7 @@ export function useArchiveProjects() {
     return () => {
       isCancelled = true;
     };
-  }, []);
+  }, [refreshKey]);
 
   return { projects, loading, source, error };
 }
