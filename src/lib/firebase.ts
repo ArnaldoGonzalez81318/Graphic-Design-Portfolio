@@ -27,8 +27,8 @@ export const getFirebaseAnalytics = () => {
   analyticsPromise = typeof window === 'undefined'
     ? Promise.resolve(null)
     : isSupported()
-        .then((supported) => (supported ? getAnalytics(app) : null))
-        .catch(() => null);
+      .then((supported) => (supported ? getAnalytics(app) : null))
+      .catch(() => null);
 
   return analyticsPromise;
 };
