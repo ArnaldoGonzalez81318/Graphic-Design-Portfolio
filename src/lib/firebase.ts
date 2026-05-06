@@ -1,5 +1,6 @@
 import { getApp, getApps, initializeApp, type FirebaseOptions } from 'firebase/app';
 import { getAnalytics, isSupported, type Analytics } from 'firebase/analytics';
+import { getAuth, type Auth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -18,6 +19,19 @@ export const isFirebaseConfigured = true;
 export const archiveCollectionName = import.meta.env.VITE_FIREBASE_ARCHIVE_COLLECTION || 'archiveProjects';
 
 let analyticsPromise: Promise<Analytics | null> | null = null;
+let authInstance: Auth | null | undefined;
+
+export const getFirebaseAuth = () => {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  if (authInstance === undefined) {
+    authInstance = getAuth(app);
+  }
+
+  return authInstance;
+};
 
 export const getFirebaseAnalytics = () => {
   if (analyticsPromise) {
