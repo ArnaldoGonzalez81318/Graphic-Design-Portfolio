@@ -55,7 +55,10 @@ The site now includes an owner dashboard at `/admin` for creating and updating a
 
 - The dashboard reads the same `archiveProjects` collection as the public archive.
 - Firestore rules stay read-only for browsers; dashboard writes go through the Netlify function at `/.netlify/functions/archive-admin`.
-- Set `ADMIN_DASHBOARD_PASSWORD` in your deployment environment before using the dashboard.
+- Enable Firebase Authentication and turn on the Google sign-in provider before using the dashboard.
+- Add your local and production domains to the Firebase Authentication authorized domains list.
+- Set `ADMIN_DASHBOARD_ALLOWED_EMAILS=you@example.com` in the deployment environment so the server only accepts your owner account.
+- The browser signs in with Google, sends a Firebase ID token to the admin function, and the function verifies both the token and the allowlisted email before writing to Firestore.
 - The function uses the same admin credential resolution as the seed scripts: `.credentials/graphic-designer-portfol-baf47.service-account.json`, `GOOGLE_APPLICATION_CREDENTIALS`, `FIREBASE_SERVICE_ACCOUNT_PATH`, or `FIREBASE_SERVICE_ACCOUNT_JSON`.
 - If you are not using Netlify, point `VITE_ARCHIVE_ADMIN_ENDPOINT` at an equivalent protected server endpoint.
 
