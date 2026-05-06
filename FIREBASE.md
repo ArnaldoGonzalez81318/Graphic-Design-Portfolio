@@ -49,6 +49,16 @@ You can use `scripts/service-account.template.json` as the shape reference when 
 6. If you prefer to run the seed directly after preflight, use `npm run seed:archive`.
 7. If you use the Firebase CLI later, deploy rules with `firebase deploy --only firestore:rules`.
 
+## Admin Dashboard
+
+The site now includes an owner dashboard at `/admin` for creating and updating archive projects from the browser.
+
+- The dashboard reads the same `archiveProjects` collection as the public archive.
+- Firestore rules stay read-only for browsers; dashboard writes go through the Netlify function at `/.netlify/functions/archive-admin`.
+- Set `ADMIN_DASHBOARD_PASSWORD` in your deployment environment before using the dashboard.
+- The function uses the same admin credential resolution as the seed scripts: `.credentials/graphic-designer-portfol-baf47.service-account.json`, `GOOGLE_APPLICATION_CREDENTIALS`, `FIREBASE_SERVICE_ACCOUNT_PATH`, or `FIREBASE_SERVICE_ACCOUNT_JSON`.
+- If you are not using Netlify, point `VITE_ARCHIVE_ADMIN_ENDPOINT` at an equivalent protected server endpoint.
+
 ## Why This Setup
 
 This avoids using browser credentials for administrative writes, which is the correct production model for a public site.
