@@ -170,8 +170,17 @@ export async function fetchArchiveProjects(): Promise<{ projects: ArchiveProject
   const remoteBySlug = new Map<string, ArchiveProject>();
 
   snapshot.forEach((document) => {
+    if (document.id.startsWith('_')) {
+      return;
+    }
+
     const data = document.data() as ArchiveProjectRecord;
     const slug = typeof data.slug === 'string' && data.slug.trim().length > 0 ? data.slug : document.id;
+
+    if (slug.startsWith('_')) {
+      return;
+    }
+
     const normalized = mergeProject({ ...data, slug });
     remoteBySlug.set(normalized.slug, normalized);
   });
