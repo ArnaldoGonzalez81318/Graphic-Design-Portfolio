@@ -97,16 +97,17 @@ export const createArchiveProjectPayload = (draft: ArchiveProject): ArchiveProje
   };
 };
 
-export async function saveArchiveProject(password: string, project: ArchiveProject) {
+export async function saveArchiveProject(idToken: string, project: ArchiveProject) {
   let response: Response;
 
   try {
     response = await fetch(archiveAdminEndpoint, {
       method: 'POST',
       headers: {
+        Authorization: `Bearer ${idToken}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ password, project }),
+      body: JSON.stringify({ project }),
     });
   } catch {
     throw new Error(
