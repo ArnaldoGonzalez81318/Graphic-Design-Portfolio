@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly VITE_FIREBASE_ARCHIVE_COLLECTION?: string;
+  readonly VITE_ARCHIVE_ADMIN_ENDPOINT?: string;
 }
 
 declare module '*.svg' {
