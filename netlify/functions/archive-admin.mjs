@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { applicationDefault, cert, getApps, initializeApp } from 'firebase-admin/app';
+import { getAuth as getAdminAuth } from 'firebase-admin/auth';
 import { FieldValue, getFirestore } from 'firebase-admin/firestore';
 
 const archiveCollectionName = process.env.FIREBASE_ARCHIVE_COLLECTION || 'archiveProjects';
@@ -27,6 +28,39 @@ function jsonResponse(statusCode, body) {
     },
     body: JSON.stringify(body),
   };
+}
+
+function getAllowedAdminEmails() {
+  const configuredValues = [
+    process.env.ADMIN_DASHBOARD_ALLOWED_EMAILS,
+    process.env.ADMIN_DASHBOARD_ALLOWED_EMAIL,
+    process.env.ARCHIVE_ADMIN_ALLOWED_EMAILS,
+    process.env.ARCHIVE_ADMIN_ALLOWED_EMAIL,
+  ]
+    .filter(Boolean)
+    .join(',');
+
+  return new Set(
+    configuredValues
+      .split(/[\n,;]/)
+      .map((value) => value.trim().toLowerCase())
+      .filter(Boolean),
+  );
+}
+
+function extractBearerToken(headers = {}) {
+  const authorizationHeader = headers.authorization || headers.Authorization;
+  if (typeof authorizationHeader !== 'string') {
+    return null;
+  }
+
+  const [scheme, ...tokenParts] = authorizationHeader.split(' ');
+  if (!scheme || !/^Bearer$/i.test(scheme) || tokenParts.length === 0) {
+    return null;
+  }
+
+  const token = tokenParts.join(' ').trim();
+  return token.length > 0 ? token : null;
 }
 
 function slugify(value) {
@@ -174,16 +208,19 @@ async function resolveCredential() {
   }
 }
 
-async function getAdminDb() {
+async function getAdminApp() {
   if (getApps().length > 0) {
-    return getFirestore(getApps()[0]);
+    return getApps()[0];
   }
 
-  const app = initializeApp({
+  return initializeApp({
     credential: await resolveCredential(),
     projectId: 'graphic-designer-portfol-baf47',
   });
+}
 
+async function getAdminDb() {
+  const app = await getAdminApp();
   return getFirestore(app);
 }
 
@@ -192,11 +229,34 @@ export default async function handler(request) {
     return jsonResponse(405, { error: 'Use POST when saving archive projects.' });
   }
 
-  const configuredPassword = process.env.ADMIN_DASHBOARD_PASSWORD || process.env.ARCHIVE_ADMIN_PASSWORD;
-  if (!configuredPassword) {
+  const allowedEmails = getAllowedAdminEmails();
+  if (allowedEmails.size === 0) {
     return jsonResponse(500, {
-      error: 'ADMIN_DASHBOARD_PASSWORD is not configured for the admin endpoint.',
+      error: 'ADMIN_DASHBOARD_ALLOWED_EMAILS is not configured for the admin endpoint.',
     });
+  }
+
+  const idToken = extractBearerToken(request.headers);
+  if (!idToken) {
+    return jsonResponse(401, { error: 'A Firebase ID token is required to use the admin endpoint.' });
+  }
+
+  let decodedToken;
+
+  try {
+    const adminApp = await getAdminApp();
+    decodedToken = await getAdminAuth(adminApp).verifyIdToken(idToken);
+  } catch {
+    return jsonResponse(401, { error: 'The Firebase ID token is invalid or expired.' });
+  }
+
+  const signedInEmail = typeof decodedToken.email === 'string' ? decodedToken.email.toLowerCase() : '';
+  if (!signedInEmail || decodedToken.email_verified !== true) {
+    return jsonResponse(403, { error: 'Use a verified Google account to access the admin endpoint.' });
+  }
+
+  if (!allowedEmails.has(signedInEmail)) {
+    return jsonResponse(403, { error: 'This signed-in account is not allowed to publish archive projects.' });
   }
 
   let body;
@@ -205,10 +265,6 @@ export default async function handler(request) {
     body = JSON.parse(request.body || '{}');
   } catch {
     return jsonResponse(400, { error: 'Request body must be valid JSON.' });
-  }
-
-  if (typeof body.password !== 'string' || body.password !== configuredPassword) {
-    return jsonResponse(401, { error: 'Invalid admin password.' });
   }
 
   let project;
@@ -236,6 +292,7 @@ export default async function handler(request) {
     return jsonResponse(200, {
       operation: existingProject.exists ? 'updated' : 'created',
       project,
+      signedInEmail,
     });
   } catch (error) {
     return jsonResponse(500, {
