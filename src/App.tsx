@@ -17,13 +17,14 @@ import HomePage from './pages/HomePage';
 
 const ArchivePage = lazy(() => import('./pages/ArchivePage'));
 const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
+const AdminDashboardPage = lazy(() => import('./pages/AdminDashboardPage'));
 
 const RouteFallback = () => (
   <main className="section-padding">
     <div className="container-grid">
       <div className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-8">
         <p className="text-xs uppercase tracking-[0.35em] text-highlight">Loading</p>
-        <p className="mt-4 text-lg text-subtle">Preparing archive content and project detail views.</p>
+        <p className="mt-4 text-lg text-subtle">Preparing archive content, project detail views, and owner tools.</p>
       </div>
     </div>
   </main>
@@ -40,7 +41,12 @@ const App = () => {
           description:
             'Expanded archive of brand systems, campaign launches, editorial design, and experiential graphics by Laura Rivera.',
         }
-        : meta;
+        : location.pathname.startsWith('/admin')
+          ? {
+            title: `Admin Dashboard · ${meta.title}`,
+            description: 'Protected publishing workspace for archive projects managed by the portfolio owner.',
+          }
+          : meta;
 
     if (pageMeta?.title) {
       document.title = pageMeta.title;
@@ -94,6 +100,7 @@ const App = () => {
             path="/archive/:slug"
             element={<ProjectDetailPage email={footerData.contact.email} />}
           />
+          <Route path="/admin" element={<AdminDashboardPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
